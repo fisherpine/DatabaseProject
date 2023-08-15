@@ -2,5 +2,19 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ggbz.dao.SDAO">
+    <insert id="AddStudent" parameterType="S">
+         insert into s(sno,sname,sex,age,dept) value(#{sno},#{sname},#{sex},#{age},#{dept});
+    </insert>
+
+    <delete id="DeleteStudentById" parameterType="String">
+         delete from s where sno = #{id};
+    </delete>
+
+    <select id="QueryStudentById" parameterType="String" resultType="com.ggbz.pojo.S">
+        select * from s where sno = #{id};
+    </select>
+    <select id="QueryAllStudent" resultType="com.ggbz.pojo.S">
+        select * from s;
+    </select>
 
 </mapper>
