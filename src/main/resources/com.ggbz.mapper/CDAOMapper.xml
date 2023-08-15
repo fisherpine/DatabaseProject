@@ -2,5 +2,14 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ggbz.dao.CDAO">
+    <insert id="AddCourse" parameterType="com.ggbz.pojo.C">
+        insert into c(cno,cname,teacher,credit)  value(#{cno},#{cname},#{teacher},#{credit});
+    </insert>
+    <select id="QueryCourseById"  parameterType="String" resultType="com.ggbz.pojo.C">
+        select * from c where cno = #{id};
+    </select>
 
+    <select id="QueryAllCourse" resultType="com.ggbz.pojo.C">
+        select * from c;
+    </select>
 </mapper>
