@@ -6,16 +6,16 @@
          insert into s(sno,sname,sex,age,dept) value(#{sno},#{sname},#{sex},#{age},#{dept});
     </insert>
 
-    <update id="UpdateStudentById" parameterType="com.ggbz.pojo.Student">
+    <update id="UpdateStudentBySno" parameterType="com.ggbz.pojo.Student">
          update s set sname=#{sname},sex=#{sex},age=#{age},dept=#{dept} where sno=#{sno};
     </update>
 
-    <delete id="DeleteStudentById" parameterType="String">
-         delete from s where sno = #{id};
+    <delete id="DeleteStudentBySno" parameterType="String">
+         delete from s where sno = #{sno};
     </delete>
 
-    <select id="QueryStudentById" parameterType="String" resultType="com.ggbz.pojo.Student">
-        select * from s where sno = #{id};
+    <select id="QueryStudentBySno" parameterType="String" resultType="com.ggbz.pojo.Student">
+        select * from s where sno = #{sno};
     </select>
     <select id="QueryAllStudent" resultType="com.ggbz.pojo.Student">
         select * from s;

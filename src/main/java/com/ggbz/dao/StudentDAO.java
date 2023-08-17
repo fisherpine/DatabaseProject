@@ -11,16 +11,16 @@ public interface StudentDAO {
     public void AddStudent(Student student);
 
     /*通过学号查询学生*/
-    public Student QueryStudentById(String id);
+    public Student QueryStudentBySno(String sno);
 
     /*查询所有学生*/
     public List<Student> QueryAllStudent();
 
     /*通过学号删除学生*/
-    public void DeleteStudentById(String id);
+    public void DeleteStudentBySno(String sno);
 
     /*更新数据通过id*/
-    public void UpdateStudentById(Student student);
+    public void UpdateStudentBySno(Student student);
 
 
     List<Student> QueryStudentsByDept(String dept);

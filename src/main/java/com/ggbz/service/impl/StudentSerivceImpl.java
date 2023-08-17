@@ -12,13 +12,13 @@ public class StudentSerivceImpl implements StudentService {
     private StudentDAO studentDAO;
 
     @Override
-    public Student QueryStudentById(String id) {
-        return studentDAO.QueryStudentById(id);
+    public Student QueryStudentBySno(String student) {
+        return studentDAO.QueryStudentBySno(student);
     }
 
     @Override
-    public void UpdateStudentById(Student student) {
-        studentDAO.UpdateStudentById(student);
+    public void UpdateStudentBySno(Student student) {
+        studentDAO.UpdateStudentBySno(student);
     }
 
     @Override
