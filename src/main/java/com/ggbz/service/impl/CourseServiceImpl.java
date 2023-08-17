@@ -12,4 +12,9 @@ public class CourseServiceImpl implements CourseService {
     public void UpdateCourseById(Course course) {
        courseDAO.UpdateCourseById(course);
     }
+
+    @Override
+    public Course QueryCourseById(String id) {
+         return courseDAO.QueryCourseById(id);
+    }
 }
