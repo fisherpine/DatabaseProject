@@ -5,6 +5,11 @@
     <insert id="AddCourse" parameterType="com.ggbz.pojo.Course">
         insert into c(cno,cname,teacher,credit)  value(#{cno},#{cname},#{teacher},#{credit});
     </insert>
+
+    <update id="UpdateCourseById" parameterType="com.ggbz.pojo.Course">
+        update c set cname=#{cname},teacher=#{teacher},credit=#{credit} where cno=#{cno};
+    </update>
+
     <select id="QueryCourseById"  parameterType="String" resultType="com.ggbz.pojo.Course">
         select * from c where cno = #{id};
     </select>

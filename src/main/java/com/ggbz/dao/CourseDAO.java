@@ -15,4 +15,6 @@ public interface CourseDAO {
 
     /*添加课程*/
     public void AddCourse(Course course);
+
+    void UpdateCourseById(Course course);
 }
