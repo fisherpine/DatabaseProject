@@ -8,8 +8,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class StudentSerivceImpl implements StudentService {
     @Autowired
     private StudentDAO studentDAO;
+
+    @Override
+    public Student QueryStudentById(String id) {
+        Student student = studentDAO.QueryStudentById(id);
+        return student;
+    }
+
     @Override
     public void UpdateStudentById(Student student) {
         studentDAO.UpdateStudentById(student);
     }
+
 }
