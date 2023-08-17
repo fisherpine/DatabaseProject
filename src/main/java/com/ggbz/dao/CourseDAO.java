@@ -4,7 +4,7 @@ import com.ggbz.pojo.C;
 
 import java.util.List;
 
-public interface CDAO {
+public interface CourseDAO {
     /*课程表*/
 
     /*查询所有课程*/

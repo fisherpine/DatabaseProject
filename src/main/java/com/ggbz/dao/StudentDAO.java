@@ -4,7 +4,7 @@ import com.ggbz.pojo.S;
 
 import java.util.List;
 
-public interface SDAO {
+public interface StudentDAO {
     //学生表
 
     /*添加学生*/
@@ -19,7 +19,8 @@ public interface SDAO {
     /*通过学号删除学生*/
     public void DeleteStudentById(String id);
 
-
+    /*更新数据通过id*/
+    public void UpdateStudentById(S student);
 
 
 }

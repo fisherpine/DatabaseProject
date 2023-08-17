@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.ggbz.dao.CDAO">
+<mapper namespace="com.ggbz.dao.CourseDAO">
     <insert id="AddCourse" parameterType="com.ggbz.pojo.C">
         insert into c(cno,cname,teacher,credit)  value(#{cno},#{cname},#{teacher},#{credit});
     </insert>
