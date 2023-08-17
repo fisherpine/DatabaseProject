@@ -34,5 +34,5 @@
     <bean id="studentService" class="com.ggbz.service.impl.StudentSerivceImpl"/>
     <bean id="courseService" class="com.ggbz.service.impl.CourseServiceImpl"/>
     <bean id="userService" class="com.ggbz.service.impl.UserServiceImpl"/>
-    <bean id="scServiceImpl" class="com.ggbz.service.impl.SCServiceImpl"/>
+    <bean id="scService" class="com.ggbz.service.impl.SCServiceImpl"/>
 </beans>
