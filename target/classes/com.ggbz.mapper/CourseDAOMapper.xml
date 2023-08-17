@@ -10,11 +10,14 @@
         update c set cname=#{cname},teacher=#{teacher},credit=#{credit} where cno=#{cno};
     </update>
 
-    <select id="QueryCourseById"  parameterType="String" resultType="com.ggbz.pojo.Course">
-        select * from c where cno = #{id};
+    <select id="QueryCourseBySno"  parameterType="String" resultType="com.ggbz.pojo.Course">
+        select * from c where sno = #{sno};
     </select>
 
     <select id="QueryAllCourse" resultType="com.ggbz.pojo.Course">
         select * from c;
+    </select>
+    <select id="QueryCourseByCno" parameterType="String" resultType="com.ggbz.pojo.Course">
+        select * from c where cno = #{cno};
     </select>
 </mapper>

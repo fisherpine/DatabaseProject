@@ -5,6 +5,8 @@ import com.ggbz.pojo.Course;
 import com.ggbz.service.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.List;
+
 public class CourseServiceImpl implements CourseService {
     @Autowired
     private CourseDAO courseDAO;
@@ -13,8 +15,9 @@ public class CourseServiceImpl implements CourseService {
        courseDAO.UpdateCourseById(course);
     }
 
+
     @Override
-    public Course QueryCourseById(String id) {
-         return courseDAO.QueryCourseById(id);
+    public Course QueryCourseByCno(String cno) {
+        return courseDAO.QueryCourseByCno(cno);
     }
 }
