@@ -1,15 +1,15 @@
 package com.ggbz.pojo;
 
-public class C {
+public class Course {
     private String cno;
     private String cname;
     private String teacher;
     private Integer credit;
 
-    public C() {
+    public Course() {
     }
 
-    public C(String cno, String cname, String teacher, Integer credit) {
+    public Course(String cno, String cname, String teacher, Integer credit) {
         this.cno = cno;
         this.cname = cname;
         this.teacher = teacher;

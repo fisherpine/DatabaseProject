@@ -2,11 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ggbz.dao.StudentDAO">
-    <insert id="AddStudent" parameterType="com.ggbz.pojo.S">
+    <insert id="AddStudent" parameterType="com.ggbz.pojo.Student">
          insert into s(sno,sname,sex,age,dept) value(#{sno},#{sname},#{sex},#{age},#{dept});
     </insert>
 
-    <update id="UpdateStudentById" parameterType="com.ggbz.pojo.S">
+    <update id="UpdateStudentById" parameterType="com.ggbz.pojo.Student">
          update s set sname=#{sname},sex=#{sex},age=#{age},dept=#{dept} where sno=#{sno};
     </update>
 
@@ -14,10 +14,10 @@
          delete from s where sno = #{id};
     </delete>
 
-    <select id="QueryStudentById" parameterType="String" resultType="com.ggbz.pojo.S">
+    <select id="QueryStudentById" parameterType="String" resultType="com.ggbz.pojo.Student">
         select * from s where sno = #{id};
     </select>
-    <select id="QueryAllStudent" resultType="com.ggbz.pojo.S">
+    <select id="QueryAllStudent" resultType="com.ggbz.pojo.Student">
         select * from s;
     </select>
 

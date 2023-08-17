@@ -1,16 +1,16 @@
 package com.ggbz.pojo;
 
-public class S {
+public class Student {
     private String sno;
     private String sname;
     private String sex;
     private Integer age;
     private String dept;
 
-    public S() {
+    public Student() {
     }
 
-    public S(String sno, String sname, String sex, Integer age, String dept) {
+    public Student(String sno, String sname, String sex, Integer age, String dept) {
         this.sno = sno;
         this.sname = sname;
         this.sex = sex;
