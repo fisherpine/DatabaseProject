@@ -3,6 +3,8 @@ package com.ggbz.dao;
 import com.ggbz.pojo.SC;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.List;
+
 public interface SCDAO {
     //多参数需要使用@Param，可以直接使用
     public SC QueryGradeBySnoAndCno(@Param("sno") String sno,@Param("cno") String cno);
@@ -10,4 +12,6 @@ public interface SCDAO {
     void UpdateGrade(SC sc);
 
     SC QueryFlunkByCno(String cno);
+
+    List<SC> QuerySCBySno(String sno);
 }
