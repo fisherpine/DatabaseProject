@@ -20,5 +20,8 @@
     <select id="QueryAllStudent" resultType="com.ggbz.pojo.Student">
         select * from s;
     </select>
+    <select id="QueryStudentsByDept" parameterType="String" resultType="com.ggbz.pojo.Student">
+        select * from s where dept = #{dept};
+    </select>
 
 </mapper>

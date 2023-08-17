@@ -5,6 +5,8 @@ import com.ggbz.pojo.Student;
 import com.ggbz.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.List;
+
 public class StudentSerivceImpl implements StudentService {
     @Autowired
     private StudentDAO studentDAO;
@@ -18,5 +20,11 @@ public class StudentSerivceImpl implements StudentService {
     public void UpdateStudentById(Student student) {
         studentDAO.UpdateStudentById(student);
     }
+
+    @Override
+    public List<Student> QueryStudentsByDept(String dept) {
+        return studentDAO.QueryStudentsByDept(dept);
+    }
+
 
 }

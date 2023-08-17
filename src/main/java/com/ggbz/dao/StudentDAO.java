@@ -23,4 +23,5 @@ public interface StudentDAO {
     public void UpdateStudentById(Student student);
 
 
+    List<Student> QueryStudentsByDept(String dept);
 }
