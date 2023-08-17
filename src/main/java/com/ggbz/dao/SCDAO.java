@@ -8,4 +8,6 @@ public interface SCDAO {
     public SC QueryGradeBySnoAndCno(@Param("sno") String sno,@Param("cno") String cno);
 
     void UpdateGrade(SC sc);
+
+    SC QueryFlunkByCno(String cno);
 }

@@ -17,4 +17,9 @@ public class SCServiceImpl implements SCService {
     public void UpdateGrade(SC sc) {
         scdao.UpdateGrade(sc);
     }
+
+    @Override
+    public SC QueryFlunkByCno(String cno) {
+        return scdao.QueryFlunkByCno(cno);
+    }
 }

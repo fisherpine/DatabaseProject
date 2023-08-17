@@ -6,4 +6,6 @@ public interface SCService {
     public SC QueryGradeBySnoAndCno(String sno,String cno);
 
     public void UpdateGrade(SC sc);
+
+    public SC QueryFlunkByCno(String cno);
 }

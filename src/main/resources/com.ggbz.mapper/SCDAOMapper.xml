@@ -9,4 +9,10 @@
     <select id="QueryGradeBySnoAndCno"  resultType="com.ggbz.pojo.SC"> /*这里没写parameterType，那么传入的参数将按顺序进行赋值*/
         select * from sc where sno=#{sno} and cno=#{cno};
     </select>
+
+
+    <select id="QueryFlunkByCno" parameterType="String" resultType="com.ggbz.pojo.SC">
+        select * from sc where cno=#{cno} and grade &lt; 60;
+    </select>
+
 </mapper>
