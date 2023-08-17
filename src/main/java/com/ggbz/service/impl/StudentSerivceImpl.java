@@ -12,7 +12,6 @@ public class StudentSerivceImpl implements StudentService {
     @Override
     public Student QueryStudentById(String id) {
         return studentDAO.QueryStudentById(id);
-
     }
 
     @Override
