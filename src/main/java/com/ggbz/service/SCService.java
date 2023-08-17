@@ -9,7 +9,9 @@ public interface SCService {
 
     public void UpdateGrade(SC sc);
 
-    public SC QueryFlunkByCno(String cno);
+    public List<SC> QueryFlunkByCno(String cno);
 
     public List<SC> QuerySCBySno(String sno);
+
+    public void QueryCreditBySno(String sno);
 }

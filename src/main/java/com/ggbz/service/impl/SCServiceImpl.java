@@ -21,13 +21,18 @@ public class SCServiceImpl implements SCService {
     }
 
     @Override
-    public SC QueryFlunkByCno(String cno) {
+    public List<SC> QueryFlunkByCno(String cno) {
         return scdao.QueryFlunkByCno(cno);
     }
 
     @Override
     public List<SC> QuerySCBySno(String sno) {
         return scdao.QuerySCBySno(sno);
+    }
+
+    @Override
+    public void QueryCreditBySno(String sno) {
+
     }
 
 

@@ -11,7 +11,7 @@ public interface SCDAO {
 
     void UpdateGrade(SC sc);
 
-    SC QueryFlunkByCno(String cno);
+    List<SC> QueryFlunkByCno(String cno);
 
     List<SC> QuerySCBySno(String sno);
 }
