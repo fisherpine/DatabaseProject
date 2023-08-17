@@ -12,4 +12,9 @@ public class SCServiceImpl implements SCService {
     public SC QueryGradeBySnoAndCno(String sno,String cno) {
         return scdao.QueryGradeBySnoAndCno(sno,cno);
     }
+
+    @Override
+    public void UpdateGrade(SC sc) {
+        scdao.UpdateGrade(sc);
+    }
 }

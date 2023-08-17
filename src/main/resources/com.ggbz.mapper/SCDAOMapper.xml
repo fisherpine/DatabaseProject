@@ -2,6 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ggbz.dao.SCDAO">
+    <update id="UpdateGrade" parameterType="com.ggbz.pojo.SC" >
+        update sc set grade=#{grade} where sno=#{sno} and cno=#{cno};
+    </update>
 
     <select id="QueryGradeBySnoAndCno"  resultType="com.ggbz.pojo.SC"> /*这里没写parameterType，那么传入的参数将按顺序进行赋值*/
         select * from sc where sno=#{sno} and cno=#{cno};
