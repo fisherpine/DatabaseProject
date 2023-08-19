@@ -15,4 +15,6 @@ public interface SCDAO {
 
 
     List<SC> QuerySCBySno(String sno);
+
+    int QueryCreditBySno(String sno);
 }

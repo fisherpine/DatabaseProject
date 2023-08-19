@@ -29,8 +29,8 @@ public class SCServiceImpl implements SCService {
     }
 
     @Override
-    public void QueryCreditBySno(String sno) {
-
+    public int QueryCreditBySno(String sno) {
+        return scdao.QueryCreditBySno(sno);
     }
 
 

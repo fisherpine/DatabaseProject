@@ -10,9 +10,8 @@ public interface SCService {
 
     public void UpdateGrade(SC sc);
 
-
-
     public List<SC> QuerySCBySno(String sno);
 
-    public void QueryCreditBySno(String sno);
+    public int QueryCreditBySno(String sno);
+
 }

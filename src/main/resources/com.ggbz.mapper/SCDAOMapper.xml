@@ -15,5 +15,8 @@
     <select id="QuerySCBySno" parameterType="String" resultType="com.ggbz.pojo.SC">
         select * from sc where sno=#{sno};
     </select>
+    <select id="QueryCreditBySno" parameterType="String" resultType="java.lang.Integer">
+        select sum(b.credit) from sc a inner join c b on a.cno = b.cno where  sno=#{sno} and grade &gt;= 60;
+    </select>
 
 </mapper>
