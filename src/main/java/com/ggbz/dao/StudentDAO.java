@@ -1,6 +1,7 @@
 package com.ggbz.dao;
 
 import com.ggbz.pojo.Student;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -23,7 +24,7 @@ public interface StudentDAO {
     public void UpdateStudentBySno(Student student);
 
 
-    List<Student> QueryStudentsByDept(String dept);
+    List<Student> QueryStudentsByDeptAndLesson(@Param("dept") String dept, @Param("lesson") String lesson);
 
 
     List<Student> QueryFlunkByCno(String cno);

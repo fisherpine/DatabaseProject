@@ -21,8 +21,8 @@
         select * from s;
     </select>
 
-    <select id="QueryStudentsByDept" parameterType="String" resultType="com.ggbz.pojo.Student">
-        select * from s where dept = #{dept};
+    <select id="QueryStudentsByDeptAndLesson"  resultType="com.ggbz.pojo.Student">
+        select * from s where dept = #{dept} and lesson = #{lesson};
     </select>
 
 

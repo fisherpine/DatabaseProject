@@ -10,8 +10,9 @@ public interface StudentService {
     public void UpdateStudentBySno(Student student);
 
     /*按专业查询学生*/
-    public List<Student> QueryStudentsByDept(String dept);
+    public List<Student> QueryStudentsByDeptAndLesson(String dept,String lesson);
 
 
     public List<Student> QueryFlunkByCno(String cno);
+
 }

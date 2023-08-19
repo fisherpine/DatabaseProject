@@ -22,8 +22,8 @@ public class StudentSerivceImpl implements StudentService {
     }
 
     @Override
-    public List<Student> QueryStudentsByDept(String dept) {
-        return studentDAO.QueryStudentsByDept(dept);
+    public List<Student> QueryStudentsByDeptAndLesson(String dept,String lesson) {
+        return studentDAO.QueryStudentsByDeptAndLesson(dept,lesson);
     }
 
 
