@@ -1,6 +1,7 @@
 package com.ggbz.service;
 
 import com.ggbz.pojo.SC;
+import com.ggbz.pojo.Student;
 
 import java.util.List;
 
@@ -9,7 +10,7 @@ public interface SCService {
 
     public void UpdateGrade(SC sc);
 
-    public List<SC> QueryFlunkByCno(String cno);
+
 
     public List<SC> QuerySCBySno(String sno);
 

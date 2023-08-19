@@ -1,6 +1,7 @@
 package com.ggbz.dao;
 
 import com.ggbz.pojo.SC;
+import com.ggbz.pojo.Student;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -11,7 +12,7 @@ public interface SCDAO {
 
     void UpdateGrade(SC sc);
 
-    List<SC> QueryFlunkByCno(String cno);
+
 
     List<SC> QuerySCBySno(String sno);
 }

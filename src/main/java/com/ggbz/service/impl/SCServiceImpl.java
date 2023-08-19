@@ -2,6 +2,7 @@ package com.ggbz.service.impl;
 
 import com.ggbz.dao.SCDAO;
 import com.ggbz.pojo.SC;
+import com.ggbz.pojo.Student;
 import com.ggbz.service.SCService;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -20,10 +21,7 @@ public class SCServiceImpl implements SCService {
         scdao.UpdateGrade(sc);
     }
 
-    @Override
-    public List<SC> QueryFlunkByCno(String cno) {
-        return scdao.QueryFlunkByCno(cno);
-    }
+
 
     @Override
     public List<SC> QuerySCBySno(String sno) {

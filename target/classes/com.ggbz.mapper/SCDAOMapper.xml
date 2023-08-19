@@ -11,9 +11,7 @@
     </select>
 
 
-    <select id="QueryFlunkByCno" parameterType="String" resultType="com.ggbz.pojo.SC">
-        select * from sc where cno=#{cno} and grade &lt; 60;
-    </select>
+
     <select id="QuerySCBySno" parameterType="String" resultType="com.ggbz.pojo.SC">
         select * from sc where sno=#{sno};
     </select>
