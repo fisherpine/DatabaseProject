@@ -7,15 +7,19 @@ public class Student {
     private Integer age;
     private String dept;
 
+    private String lesson;
+
+
     public Student() {
     }
 
-    public Student(String sno, String sname, String sex, Integer age, String dept) {
+    public Student(String sno, String sname, String sex, Integer age, String dept, String lesson) {
         this.sno = sno;
         this.sname = sname;
         this.sex = sex;
         this.age = age;
         this.dept = dept;
+        this.lesson = lesson;
     }
 
     /**
@@ -98,7 +102,23 @@ public class Student {
         this.dept = dept;
     }
 
+    /**
+     * 获取
+     * @return lesson
+     */
+    public String getLesson() {
+        return lesson;
+    }
+
+    /**
+     * 设置
+     * @param lesson
+     */
+    public void setLesson(String lesson) {
+        this.lesson = lesson;
+    }
+
     public String toString() {
-        return "S{sno = " + sno + ", sname = " + sname + ", sex = " + sex + ", age = " + age + ", dept = " + dept + "}";
+        return "Student{sno = " + sno + ", sname = " + sname + ", sex = " + sex + ", age = " + age + ", dept = " + dept + ", lesson = " + lesson + "}";
     }
 }
