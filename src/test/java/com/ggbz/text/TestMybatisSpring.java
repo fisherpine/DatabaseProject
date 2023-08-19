@@ -16,6 +16,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.util.List;
+
 public class TestMybatisSpring {
 
     /*
@@ -37,17 +39,26 @@ public class TestMybatisSpring {
 
 
     @Test
-    public void textSDAO(){
+    public void textStudent(){
         ApplicationContext ctx = new ClassPathXmlApplicationContext("/applicationContext.xml");
         StudentDAO sDAO = (StudentDAO) ctx.getBean("studentDAO");
-        Student student1 = sDAO.QueryStudentById("201801001");
+        StudentService studentService  = (StudentService) ctx.getBean("studentService");
+        List<Student> c002 = studentService.QueryFlunkByCno("C002");
+        for (Student student : c002) {
+            System.out.println(student);
+        }
+        /*List<Student> studentList = studentService.QueryStudentsByDept("软件工程");
+        for (Student student : studentList) {
+            System.out.println(student);
+        }*/
+        /*Student student1 = sDAO.QueryStudentById("201801001");
         student1.setAge(18);
         student1.setSex("男");
         student1.setSname("吴亦凡");
 
 
         StudentService studentSerivce = (StudentService) ctx.getBean("studentService");
-        studentSerivce.UpdateStudentById(student1);
+        studentSerivce.UpdateStudentById(student1);*/
 
         /*S s = sDAO.QueryStudentById("");
         System.out.println(s.getSex());*/
@@ -65,10 +76,8 @@ public class TestMybatisSpring {
         ApplicationContext ctx = new ClassPathXmlApplicationContext("/applicationContext.xml");
         CourseService courseService = (CourseService) ctx.getBean("courseService");
         CourseDAO courseDAO = (CourseDAO) ctx.getBean("courseDAO");
-        Course course = courseDAO.QueryCourseById("C001");
-        course.setCname("数据库分析");
-
-        courseService.UpdateCourseById(course);
+        Course courses = courseDAO.QueryCourseByCno("C001");
+        System.out.println(courses);
 
 
        /* List<C> cs = cdao.QueryAllCourse();
@@ -91,8 +100,16 @@ public class TestMybatisSpring {
     public void textSCDAO(){
         ApplicationContext ctx = new ClassPathXmlApplicationContext("/applicationContext.xml");
         SCService scService = (SCService) ctx.getBean("scService");
-        SC c001 = scService.QueryGradeBySnoAndCno("201801001", "C001");
+        /*SC c001 = scService.QueryGradeBySnoAndCno("201801001", "C001");
         c001.setGrade(100);
-        scService.UpdateGrade(c001);
+        scService.UpdateGrade(c001);*/
+
+       /* SC c002 = scService.QueryFlunkByCno("C002");
+        System.out.println(c002);*/
+        List<SC> scs = scService.QuerySCBySno("201801001");
+        for (SC sc : scs) {
+            System.out.println(sc);
+        }
+
     }
 }
