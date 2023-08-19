@@ -3,11 +3,11 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ggbz.dao.StudentDAO">
     <insert id="AddStudent" parameterType="com.ggbz.pojo.Student">
-         insert into s(sno,sname,sex,age,dept) value(#{sno},#{sname},#{sex},#{age},#{dept});
+         insert into s(sno,sname,sex,age,dept,lesson) value(#{sno},#{sname},#{sex},#{age},#{dept},#{lesson});
     </insert>
 
     <update id="UpdateStudentBySno" parameterType="com.ggbz.pojo.Student">
-         update s set sname=#{sname},sex=#{sex},age=#{age},dept=#{dept} where sno=#{sno};
+         update s set sname=#{sname},sex=#{sex},age=#{age},dept=#{dept},lesson=#{lesson} where sno=#{sno};
     </update>
 
     <delete id="DeleteStudentBySno" parameterType="String">
@@ -20,13 +20,14 @@
     <select id="QueryAllStudent" resultType="com.ggbz.pojo.Student">
         select * from s;
     </select>
+
     <select id="QueryStudentsByDept" parameterType="String" resultType="com.ggbz.pojo.Student">
         select * from s where dept = #{dept};
     </select>
 
 
     <select id="QueryFlunkByCno" parameterType="String" resultType="com.ggbz.pojo.Student">
-        select b.sno,b.sname,b.sex,b.age,b.dept from sc a,s b where a.sno = b.sno and a.cno=#{cno} and a.grade &lt; 60;
+        select b.sno,b.sname,b.sex,b.age,b.dept,b.leeson from sc a,s b where a.sno = b.sno and a.cno=#{cno} and a.grade &lt; 60;
     </select>
 
 </mapper>
