@@ -22,7 +22,6 @@ public class SCServiceImpl implements SCService {
     }
 
 
-
     @Override
     public List<SC> QuerySCBySno(String sno) {
         return scdao.QuerySCBySno(sno);
