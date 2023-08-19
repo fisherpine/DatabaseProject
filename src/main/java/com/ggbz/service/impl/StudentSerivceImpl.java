@@ -27,4 +27,8 @@ public class StudentSerivceImpl implements StudentService {
     }
 
 
+    @Override
+    public List<Student> QueryFlunkByCno(String cno) {
+        return studentDAO.QueryFlunkByCno(cno);
+    }
 }

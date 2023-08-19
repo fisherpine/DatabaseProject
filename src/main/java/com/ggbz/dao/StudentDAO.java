@@ -24,4 +24,7 @@ public interface StudentDAO {
 
 
     List<Student> QueryStudentsByDept(String dept);
+
+
+    List<Student> QueryFlunkByCno(String cno);
 }

@@ -11,4 +11,7 @@ public interface StudentService {
 
     /*按专业查询学生*/
     public List<Student> QueryStudentsByDept(String dept);
+
+
+    public List<Student> QueryFlunkByCno(String cno);
 }

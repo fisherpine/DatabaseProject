@@ -24,4 +24,9 @@
         select * from s where dept = #{dept};
     </select>
 
+
+    <select id="QueryFlunkByCno" parameterType="String" resultType="com.ggbz.pojo.Student">
+        select b.sno,b.sname,b.sex,b.age,b.dept from sc a,s b where a.sno = b.sno and a.cno=#{cno} and a.grade &lt; 60;
+    </select>
+
 </mapper>
