@@ -34,5 +34,8 @@
     <select id="QueryFlunkNumberByDeptLessonCno" resultType="java.lang.Integer">
         select count(*) from s a inner join sc b on a.sno = b.sno where a.dept=#{dept} and a.lesson=#{lesson} and b.cno=#{cno} and grade &lt; 60;
     </select>
+    <select id="QueryNumberByDeptLesson" resultType="java.lang.Integer">
+        select count(*) from s where dept=#{dept} and lesson=#{lesson};
+    </select>
 
 </mapper>

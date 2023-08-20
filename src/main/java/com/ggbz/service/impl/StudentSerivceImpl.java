@@ -37,4 +37,9 @@ public class StudentSerivceImpl implements StudentService {
     public int QueryFlunkNumberByDeptLessonCno(@Param("dept") String dept, @Param("lesson")String lesson, @Param("cno")String cno) {
         return studentDAO.QueryFlunkNumberByDeptLessonCno(dept,lesson,cno);
     }
+
+    @Override
+    public int QueryNumberByDeptLesson(String dept, String lesson) {
+        return studentDAO.QueryNumberByDeptLesson(dept,lesson);
+    }
 }
