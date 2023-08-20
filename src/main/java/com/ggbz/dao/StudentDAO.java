@@ -29,5 +29,5 @@ public interface StudentDAO {
 
     List<Student> QueryFlunkByCno(String cno);
 
-    int QueryFlunkNumberByDeptLesonCno(@Param("dept")String dept, @Param("lesson") String lesson,  @Param("cno")String cno);
+    int QueryFlunkNumberByDeptLessonCno(@Param("dept")String dept, @Param("lesson") String lesson,  @Param("cno")String cno);
 }

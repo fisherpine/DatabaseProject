@@ -17,5 +17,7 @@ public interface StudentService {
 
 
     //按照 专业 班级 科目 查询 不及格人数
-    public int QueryFlunkNumberByDeptLesonCno(String dept,String lesson,String cno);
+    public int QueryFlunkNumberByDeptLessonCno(String dept,String lesson,String cno);
+
+
 }
