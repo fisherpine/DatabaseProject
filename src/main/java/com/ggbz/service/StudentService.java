@@ -15,4 +15,7 @@ public interface StudentService {
 
     public List<Student> QueryFlunkByCno(String cno);
 
+
+    //按照 专业 班级 科目 查询 不及格人数
+    public int QueryFlunkNumberByDeptLesonCno(String dept,String lesson,String cno);
 }

@@ -17,6 +17,7 @@
     <select id="QueryStudentBySno" parameterType="String" resultType="com.ggbz.pojo.Student">
         select * from s where sno = #{sno};
     </select>
+
     <select id="QueryAllStudent" resultType="com.ggbz.pojo.Student">
         select * from s;
     </select>
@@ -28,6 +29,10 @@
 
     <select id="QueryFlunkByCno" parameterType="String" resultType="com.ggbz.pojo.Student">
         select b.sno,b.sname,b.sex,b.age,b.dept,b.leeson from sc a,s b where a.sno = b.sno and a.cno=#{cno} and a.grade &lt; 60;
+    </select>
+
+    <select id="QueryFlunkNumberByDeptLesonCno" resultType="java.lang.Integer">
+        select count(*) from s a inner join sc b on a.sno = b.sno where a.dept=#{dept} and a.lesson=#{lesson} and b.cno=#{cno} and grade &lt; 60;
     </select>
 
 </mapper>

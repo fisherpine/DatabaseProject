@@ -3,6 +3,7 @@ package com.ggbz.service.impl;
 import com.ggbz.dao.StudentDAO;
 import com.ggbz.pojo.Student;
 import com.ggbz.service.StudentService;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
@@ -30,5 +31,10 @@ public class StudentSerivceImpl implements StudentService {
     @Override
     public List<Student> QueryFlunkByCno(String cno) {
         return studentDAO.QueryFlunkByCno(cno);
+    }
+
+    @Override
+    public int QueryFlunkNumberByDeptLesonCno(@Param("dept") String dept, @Param("lesson")String lesson, @Param("cno")String cno) {
+        return studentDAO.QueryFlunkNumberByDeptLesonCno(dept,lesson,cno);
     }
 }
