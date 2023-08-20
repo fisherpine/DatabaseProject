@@ -21,4 +21,7 @@ public interface StudentService {
 
     //按照 专业 班级 查询班级总人数
     public int QueryNumberByDeptLesson(String dept,String lesson);
+
+    //按班级统计不及格人数及比例
+    public float QueryFailureRate(String dept,String lesson,String cno);
 }

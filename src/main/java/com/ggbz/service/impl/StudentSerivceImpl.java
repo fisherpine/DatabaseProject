@@ -42,4 +42,10 @@ public class StudentSerivceImpl implements StudentService {
     public int QueryNumberByDeptLesson(String dept, String lesson) {
         return studentDAO.QueryNumberByDeptLesson(dept,lesson);
     }
+
+    @Override
+    public float QueryFailureRate(String dept, String lesson, String cno) {
+        float FailureRate = (float) QueryFlunkNumberByDeptLessonCno(dept, lesson, cno) / QueryNumberByDeptLesson(dept, lesson);
+        return FailureRate;
+    }
 }
