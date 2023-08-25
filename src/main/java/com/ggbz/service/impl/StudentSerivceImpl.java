@@ -53,4 +53,11 @@ public class StudentSerivceImpl implements StudentService {
     public int QueryAllLevelsPeopleNumber(String dept, String lesson, String cno,String grade_segment) {
         return studentDAO.QueryAllLevelsPeopleNumber(dept,lesson,cno,grade_segment);
     }
+
+    @Override
+    public float QueryAllLevelsRate(String dept, String lesson, String cno, String grade_segment) {
+        //默认本班同学都学了这门课
+        float LeversRate = (float) QueryAllLevelsPeopleNumber(dept, lesson, cno, grade_segment) / QueryNumberByDeptLesson(dept, lesson);
+        return LeversRate;
+    }
 }

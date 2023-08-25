@@ -27,4 +27,7 @@ public interface StudentService {
 
     //按班级统计各分数段人数及比例
     public int QueryAllLevelsPeopleNumber(String dept,String lesson,String cno,String grade_segment);
+
+    //各分段比例
+    public float QueryAllLevelsRate(String dept,String lesson,String cno,String grade_segment);
 }
