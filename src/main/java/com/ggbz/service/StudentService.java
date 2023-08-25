@@ -24,4 +24,7 @@ public interface StudentService {
 
     //按班级统计不及格人数及比例
     public float QueryFailureRate(String dept,String lesson,String cno);
+
+    //按班级统计各分数段人数及比例
+    public int QueryAllLevelsPeopleNumber(String dept,String lesson,String cno,String grade_segment);
 }

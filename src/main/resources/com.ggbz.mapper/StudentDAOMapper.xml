@@ -37,5 +37,22 @@
     <select id="QueryNumberByDeptLesson" resultType="java.lang.Integer">
         select count(*) from s where dept=#{dept} and lesson=#{lesson};
     </select>
+    <select id="QueryAllLevelsPeopleNumber" resultType="java.lang.Integer">
+        select number from
+            (select
+                 CASE
+                     WHEN grade >= 90 THEN 'A'
+                     WHEN grade >= 80 THEN 'B'
+                     WHEN grade >= 70 THEN 'C'
+                     WHEN grade >= 60 THEN 'D'
+                     ELSE 'F'
+                     END AS grade_segment,count(*) number
+             FROM (
+                      select b.grade
+                      from (select * from s where dept=#{dept} and lesson=#{lesson}) a
+                               inner join (select * from sc where cno=#{cno}) b
+                                          on a.sno = b.sno) message
+             GROUP BY grade_segment) numbertable where grade_segment = #{grade_segment};
+    </select>
 
 </mapper>

@@ -32,4 +32,6 @@ public interface StudentDAO {
     int QueryFlunkNumberByDeptLessonCno(@Param("dept")String dept, @Param("lesson") String lesson,  @Param("cno")String cno);
 
     int QueryNumberByDeptLesson(@Param("dept")String dept, @Param("lesson")String lesson);
+
+    int QueryAllLevelsPeopleNumber(@Param("dept")String dept, @Param("lesson")String lesson, @Param("cno") String cno,@Param("grade_segment")String grade_segment);
 }
