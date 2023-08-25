@@ -16,4 +16,7 @@ public interface SCService {
 
     public int QueryCreditBySno(String sno);
 
+    //各科平均分数
+    public float QueryAvgGradeByDeptLessonCno(String dept,String lesson,String cno);
+
 }

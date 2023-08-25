@@ -19,4 +19,12 @@
         select sum(b.credit) from sc a inner join c b on a.cno = b.cno where  sno=#{sno} and grade &gt;= 60;
     </select>
 
+    <select id="QueryAvgGradeByDeptLessonCno" resultType="java.lang.Float">
+        select avg(b.grade)
+        from s a inner join sc b on a.sno=b.sno
+        where a.dept=#{dept}
+          and a.lesson=#{lesson}
+          and b.cno=#{cno};
+    </select>
+
 </mapper>

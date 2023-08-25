@@ -17,4 +17,6 @@ public interface SCDAO {
     List<SC> QuerySCBySno(String sno);
 
     int QueryCreditBySno(String sno);
+
+    float QueryAvgGradeByDeptLessonCno(@Param("dept")String dept, @Param("lesson")String lesson, @Param("cno")String cno);
 }

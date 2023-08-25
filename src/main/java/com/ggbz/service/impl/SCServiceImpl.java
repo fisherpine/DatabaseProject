@@ -32,5 +32,10 @@ public class SCServiceImpl implements SCService {
         return scdao.QueryCreditBySno(sno);
     }
 
+    @Override
+    public float QueryAvgGradeByDeptLessonCno(String dept, String lesson, String cno) {
+        return scdao.QueryAvgGradeByDeptLessonCno(dept,lesson,cno);
+    }
+
 
 }
