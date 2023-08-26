@@ -2,6 +2,7 @@ package com.ggbz.view;
 
 import javax.swing.*;
 import javax.swing.border.Border;
+import javax.swing.border.TitledBorder;
 import java.awt.*;
 
 public class StudentMessageManage extends JFrame {
@@ -24,18 +25,32 @@ public class StudentMessageManage extends JFrame {
 
 
         JPanel OperatejPanel = new JPanel();
-        OperatejPanel.setPreferredSize(new Dimension(500,300));
+        OperatejPanel.setPreferredSize(new Dimension(500,100));
 
         JPanel MessagejPanel = new JPanel();
-        MessagejPanel.setPreferredSize(new Dimension(500,100));
+        MessagejPanel.setPreferredSize(new Dimension(500,300));
 
         //创建边框
         Border lineBorder = BorderFactory.createLineBorder(Color.GRAY, 1);
         OperatejPanel.setBorder(lineBorder);
         MessagejPanel.setBorder(lineBorder);
 
-        frame.add(OperatejPanel,BorderLayout.CENTER);
-        frame.add(MessagejPanel,BorderLayout.SOUTH);
+        //给边框加标题
+        TitledBorder OperatetitledBorder = BorderFactory.createTitledBorder("操作");
+        TitledBorder MessagetitledBorder = BorderFactory.createTitledBorder("学生信息");
+
+        OperatetitledBorder.setTitleJustification(TitledBorder.LEFT);
+        OperatetitledBorder.setTitleColor(Color.BLACK);
+
+        MessagetitledBorder.setTitleJustification(TitledBorder.LEFT);
+        MessagetitledBorder.setTitleColor(Color.BLACK);
+
+        OperatejPanel.setBorder(OperatetitledBorder);
+        MessagejPanel.setBorder(MessagetitledBorder);
+
+        frame.add(MessagejPanel,BorderLayout.CENTER);
+        frame.add(OperatejPanel,BorderLayout.SOUTH);
+
 
         frame.setVisible(true);
     }
