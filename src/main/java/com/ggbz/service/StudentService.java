@@ -6,6 +6,7 @@ import com.sun.org.apache.xpath.internal.operations.Bool;
 import java.util.List;
 
 public interface StudentService {
+    public void AddStudent(Student student);
     public Student QueryStudentBySno(String sno);
     public void UpdateStudentBySno(Student student);
 

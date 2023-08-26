@@ -13,6 +13,11 @@ public class StudentSerivceImpl implements StudentService {
     private StudentDAO studentDAO;
 
     @Override
+    public void AddStudent(Student student) {
+        studentDAO.AddStudent(student);
+    }
+
+    @Override
     public Student QueryStudentBySno(String student) {
         return studentDAO.QueryStudentBySno(student);
     }
