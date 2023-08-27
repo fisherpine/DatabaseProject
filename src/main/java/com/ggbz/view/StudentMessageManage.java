@@ -1,14 +1,30 @@
 package com.ggbz.view;
 
+import com.ggbz.pojo.Student;
 import com.ggbz.service.CourseService;
+import com.ggbz.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class StudentMessageManage extends JFrame {
+    @Autowired
+    private StudentService studentService;
+
+    public StudentMessageManage() {
+    }
+
+    public StudentMessageManage(StudentService studentService) {
+        this.studentService = studentService;
+    }
+
     public void init(){
         JFrame frame = new JFrame("学生信息管理");
         //frame布局
@@ -57,14 +73,18 @@ public class StudentMessageManage extends JFrame {
 
         // 创建标签和文本框组件并添加到面板中
         addComponent(MessagejPanel, new JLabel("学号："), 0, 0, GridBagConstraints.WEST);
-        addComponent(MessagejPanel, new JTextField(15), 1, 0, GridBagConstraints.WEST);
+        JTextField sno = new JTextField(15);
+        addComponent(MessagejPanel,sno, 1, 0, GridBagConstraints.WEST);
 
         addComponent(MessagejPanel, new JLabel("姓名："), 0,1 , GridBagConstraints.WEST);
-        addComponent(MessagejPanel, new JTextField(15), 1,1 , GridBagConstraints.WEST);
+        JTextField sname = new JTextField(15);
+        addComponent(MessagejPanel, sname, 1,1 , GridBagConstraints.WEST);
 
         //性别单选框
         JRadioButton man = new JRadioButton("男");
         JRadioButton woman = new JRadioButton("女");
+        man.setActionCommand("男");
+        woman.setActionCommand("女");
         //分组
         ButtonGroup group = new ButtonGroup();
         group.add(man);
@@ -80,7 +100,8 @@ public class StudentMessageManage extends JFrame {
 
 
         addComponent(MessagejPanel, new JLabel("年龄："), 0,3 , GridBagConstraints.WEST);
-        addComponent(MessagejPanel, new JTextField(15), 1,3 , GridBagConstraints.WEST);
+        JTextField age = new JTextField(15);
+        addComponent(MessagejPanel, age, 1,3 , GridBagConstraints.WEST);
 
         addComponent(MessagejPanel, new JLabel("专业："), 0,4 , GridBagConstraints.WEST);
         JComboBox dept = new JComboBox();
@@ -88,19 +109,37 @@ public class StudentMessageManage extends JFrame {
         dept.addItem("软件工程");
         dept.addItem("信息管理");
         dept.addItem("网络与新媒体");
+        dept.setSelectedIndex(-1);
         addComponent(MessagejPanel, dept, 1,4 , GridBagConstraints.WEST);
 
         addComponent(MessagejPanel, new JLabel("班级："), 0,5 , GridBagConstraints.WEST);
         JComboBox lesson = new JComboBox();
         lesson.addItem("C001");
         lesson.addItem("C002");
-        addComponent(MessagejPanel, new JTextField(15), 1,5 , GridBagConstraints.WEST);
+        lesson.setSelectedIndex(-1);
+        addComponent(MessagejPanel,lesson, 1,5 , GridBagConstraints.WEST);
 
         //OperatePanel面板中组件的添加
         OperatejPanel.setLayout(new GridLayout(1,2));
-
-
         JButton addStudent = new JButton("新增");
+        addStudent.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Student student = new Student();
+                student.setSno(sno.getText());
+                student.setSname(sname.getText());
+                ButtonModel selectedModel = group.getSelection();
+                if (selectedModel != null) {
+                    String selectedText = selectedModel.getActionCommand();
+                    student.setSex(selectedText);
+                }
+                student.setAge(Integer.valueOf(age.getText()));
+                student.setDept(dept.getSelectedItem().toString());
+                student.setLesson(lesson.getSelectedItem().toString());
+                //添加学生
+                studentService.AddStudent(student);
+            }
+        });
         JButton exit = new JButton("退出");
 
         JPanel buttonContainer1 = new JPanel(new FlowLayout(FlowLayout.RIGHT,20,20));
@@ -126,7 +165,12 @@ public class StudentMessageManage extends JFrame {
         constraints.anchor = anchor;
         container.add(component, constraints);
     }
+
     public static void main(String[] args) {
-        new StudentMessageManage().init();
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("/applicationContext.xml");
+        StudentMessageManage studentMessageManage = (StudentMessageManage) ctx.getBean("studentMessageManage");
+        studentMessageManage.init();
     }
+
+
 }
