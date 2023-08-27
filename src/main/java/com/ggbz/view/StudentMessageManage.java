@@ -18,11 +18,12 @@ public class StudentMessageManage extends JFrame {
     @Autowired
     private StudentService studentService;
 
+    private JFrame fatherJframe;
     public StudentMessageManage() {
     }
 
-    public StudentMessageManage(StudentService studentService) {
-        this.studentService = studentService;
+    public StudentMessageManage(JFrame fatherJframe) {
+        this.fatherJframe = fatherJframe;
     }
 
     public void init(){
@@ -141,6 +142,13 @@ public class StudentMessageManage extends JFrame {
             }
         });
         JButton exit = new JButton("退出");
+        exit.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.setVisible(false);
+                fatherJframe.setVisible(true);
+            }
+        });
 
         JPanel buttonContainer1 = new JPanel(new FlowLayout(FlowLayout.RIGHT,20,20));
         buttonContainer1.setPreferredSize(new Dimension(200, 50)); // 设置容器大小
