@@ -22,17 +22,29 @@ public class StudentGradeManageSystem extends JFrame {
         JMenuBar menuBar = new JMenuBar();
 
         JMenu studentMenu = new JMenu("学生信息管理");
-        JMenuItem studentjMenuItem = new JMenuItem("学生录入");
-        studentMenu.add(studentjMenuItem);
-        //给学生信息管理绑定点击事件
-        studentjMenuItem.addActionListener(new ActionListener() {
+        JMenuItem studentMessageAdd = new JMenuItem("学生录入");
+        JMenuItem studentMessageSelect = new JMenuItem("学生信息查询");
+        studentMenu.add(studentMessageAdd);
+        studentMenu.add(studentMessageSelect);
+        //给学生信息管理绑定点击事件，跳转到学生录入界面
+        studentMessageAdd.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new StudentMessageManage().init();
+                StudentMessageManage studentMessageManage = new StudentMessageManage(frame);
+                studentMessageManage.MessageAdd();
                 frame.setVisible(false);
             }
         });
 
+        //给学生信息查询绑定事件，跳转到学生信息查询页面
+        studentMessageSelect.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                StudentMessageManage studentMessageManage = new StudentMessageManage();
+                studentMessageManage.MessageSelect();
+                frame.setVisible(false);
+            }
+        });
         JMenu scoreMenu = new JMenu("学生成绩管理");
         JMenu systemMenu = new JMenu("系统管理");
 
