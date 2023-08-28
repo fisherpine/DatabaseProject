@@ -9,6 +9,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import javax.swing.*;
 import javax.swing.border.Border;
+import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -166,18 +167,43 @@ public class StudentMessageManage extends JFrame {
         container.add(component, constraints);
     }
 
-
-    public void MessageSelect(){
+    public void MessageSelect() {
         JFrame frame = new JFrame("学生信息查询");
         //frame布局
+        frame.setLayout(new BorderLayout());
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setSize(600, 400);
+
         FrameCenter(frame);
+        JPanel ConditionjPanel = new JPanel();
+        ConditionjPanel.setPreferredSize(new Dimension(500,150));
+
+        JPanel ShowjPanel = new JPanel();
+        ShowjPanel.setPreferredSize(new Dimension(500,250));
+
+        //给边框加标题
+        TitledBorder SelectCondition = BorderFactory.createTitledBorder("查询条件");
+        TitledBorder ResultShow = BorderFactory.createTitledBorder("");
+
+        SelectCondition.setTitleJustification(TitledBorder.LEFT);
+        SelectCondition.setTitleColor(Color.BLACK);
+
+        ResultShow.setTitleJustification(TitledBorder.LEFT);
+        ResultShow.setTitleColor(Color.BLACK);
+
+        ConditionjPanel.setBorder(SelectCondition);
+        ShowjPanel.setBorder(ResultShow);
+
+
+
+        frame.add(ConditionjPanel,BorderLayout.CENTER);
+        frame.add(ShowjPanel,BorderLayout.SOUTH);
+
         frame.setVisible(true);
     }
     public static void main(String[] args) {
         StudentMessageManage studentMessageManage = new StudentMessageManage();
-        studentMessageManage.MessageAdd();
+        studentMessageManage.MessageSelect();
     }
     public void FrameCenter(JFrame frame){
         // 获取屏幕尺寸
