@@ -31,15 +31,8 @@ public class StudentMessageManage extends JFrame {
         frame.setLayout(new BorderLayout());
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setSize(600, 400);
-        // 获取屏幕尺寸
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
-        // 计算窗口位置
-        int centerX = (screenSize.width - frame.getWidth()) / 2;
-        int centerY = (screenSize.height - frame.getHeight()) / 2;
-
-        // 设置窗口位置
-        frame.setLocation(centerX, centerY);
+        FrameCenter(frame);
         JPanel MessagejPanel = new JPanel();
         MessagejPanel.setPreferredSize(new Dimension(500,300));
 
@@ -179,12 +172,23 @@ public class StudentMessageManage extends JFrame {
         //frame布局
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setSize(600, 400);
+        FrameCenter(frame);
         frame.setVisible(true);
     }
     public static void main(String[] args) {
         StudentMessageManage studentMessageManage = new StudentMessageManage();
-        studentMessageManage.MessageSelect();
+        studentMessageManage.MessageAdd();
+    }
+    public void FrameCenter(JFrame frame){
+        // 获取屏幕尺寸
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
+        // 计算窗口位置
+        int centerX = (screenSize.width - frame.getWidth()) / 2;
+        int centerY = (screenSize.height - frame.getHeight()) / 2;
+
+        // 设置窗口位置
+        frame.setLocation(centerX, centerY);
     }
 
 
