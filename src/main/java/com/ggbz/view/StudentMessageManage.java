@@ -27,7 +27,7 @@ public class StudentMessageManage extends JFrame {
     }
 
     public void init(){
-        JFrame frame = new JFrame("学生信息管理");
+        JFrame frame = new JFrame("学生信息录入");
         //frame布局
         frame.setLayout(new BorderLayout());
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
