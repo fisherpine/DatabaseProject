@@ -21,12 +21,11 @@ public class StudentMessageManage extends JFrame {
     private JFrame fatherJframe;
     public StudentMessageManage() {
     }
-
     public StudentMessageManage(JFrame fatherJframe) {
         this.fatherJframe = fatherJframe;
     }
 
-    public void init(){
+    public void MessageAdd(){
         JFrame frame = new JFrame("学生信息录入");
         //frame布局
         frame.setLayout(new BorderLayout());
@@ -174,10 +173,18 @@ public class StudentMessageManage extends JFrame {
         container.add(component, constraints);
     }
 
+
+    public void MessageSelect(){
+        JFrame frame = new JFrame("学生信息查询");
+        //frame布局
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        frame.setSize(600, 400);
+        frame.setVisible(true);
+    }
     public static void main(String[] args) {
-        ApplicationContext ctx = new ClassPathXmlApplicationContext("/applicationContext.xml");
-        StudentMessageManage studentMessageManage = (StudentMessageManage) ctx.getBean("studentMessageManage");
-        studentMessageManage.init();
+        StudentMessageManage studentMessageManage = new StudentMessageManage();
+        studentMessageManage.MessageSelect();
+
     }
 
 
