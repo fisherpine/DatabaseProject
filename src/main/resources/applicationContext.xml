@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <context:component-scan base-package="com.ggbz"/>
     <!--druid连接池-->
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
         <!--配置连接池信息-->
         <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
         <property name="username" value="root"/>
         <property name="password" value="123456"/>
-        <property name="url" value="jdbc:mysql://localhost:3306/db_report?useSSL=false&amp;useUnicode=true&amp;characterEncoding=utf8&amp;serverTimezone=Asia/Shanghai"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/db_report?useSSL=false&amp;useUnicode=true&amp;characterEncoding=utf8&amp;serverTimezone=Asia/Shanghai&amp;allowPublicKeyRetrieval=true"/>
     </bean>
     <!--创建SqlSessionFactory 起别名-->
     <bean id="ssfb" class="org.mybatis.spring.SqlSessionFactoryBean">
@@ -35,4 +37,11 @@
     <bean id="courseService" class="com.ggbz.service.impl.CourseServiceImpl"/>
     <bean id="userService" class="com.ggbz.service.impl.UserServiceImpl"/>
     <bean id="scService" class="com.ggbz.service.impl.SCServiceImpl"/>
+
+    <!--View-->
+    <bean id="studentMessageManage" class="com.ggbz.view.StudentMessageManage">
+    </bean>
+
+
+
 </beans>
