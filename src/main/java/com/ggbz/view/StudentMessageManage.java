@@ -3,6 +3,7 @@ package com.ggbz.view;
 import com.ggbz.pojo.Student;
 import com.ggbz.service.CourseService;
 import com.ggbz.service.StudentService;
+import com.ggbz.view.common.AlertFrame;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -106,12 +107,12 @@ public class StudentMessageManage extends JFrame {
         dept.setSelectedIndex(-1);
         addComponent(MessagejPanel, dept, 1,4 , GridBagConstraints.WEST);
 
-        addComponent(MessagejPanel, new JLabel("班级："), 0,5 , GridBagConstraints.WEST);
-        JComboBox lesson = new JComboBox();
-        lesson.addItem("C001");
-        lesson.addItem("C002");
-        lesson.setSelectedIndex(-1);
-        addComponent(MessagejPanel,lesson, 1,5 , GridBagConstraints.WEST);
+//        addComponent(MessagejPanel, new JLabel("班级："), 0,5 , GridBagConstraints.WEST);
+//        JComboBox lesson = new JComboBox();
+//        lesson.addItem("C001");
+//        lesson.addItem("C002");
+//        lesson.setSelectedIndex(-1);
+//        addComponent(MessagejPanel,lesson, 1,5 , GridBagConstraints.WEST);
 
         //OperatePanel面板中组件的添加
         OperatejPanel.setLayout(new GridLayout(1,2));
@@ -120,6 +121,11 @@ public class StudentMessageManage extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Student student = new Student();
+                //正则表达式来判断输入:判断输入的学号和年龄是否正确
+                if(sno.getText().matches("^\\d{9}$")!= true && age.getText().matches("^(1\\d|[1-9])$")!= true ) {
+                    AlertFrame.showMessage("输入数据有误，请重新输入", "提示", JOptionPane.INFORMATION_MESSAGE);
+                    frame.repaint();
+                }
                 student.setSno(sno.getText());
                 student.setSname(sname.getText());
                 ButtonModel selectedModel = group.getSelection();
@@ -129,9 +135,15 @@ public class StudentMessageManage extends JFrame {
                 }
                 student.setAge(Integer.valueOf(age.getText()));
                 student.setDept(dept.getSelectedItem().toString());
-                student.setLesson(lesson.getSelectedItem().toString());
-                //添加学生
-                studentService.AddStudent(student);
+                //判断对象属性中是否有空值
+                if ((student.getAge() == null || student.getAge().toString() == "")||(student.getSno()==null||student.getSno()=="")||(student.getDept()==null||student.getDept()=="")||(student.getSex()==null||student.getSex()=="")||(student.getSname()==null||student.getSname()=="")){
+                    AlertFrame.showMessage("请将信息填充完整", "提示", JOptionPane.INFORMATION_MESSAGE);
+                    frame.repaint();
+                }else{
+                    //添加学生
+                    studentService.AddStudent(student);
+                }
+
             }
         });
         JButton exit = new JButton("退出");
