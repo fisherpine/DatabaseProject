@@ -124,7 +124,8 @@ public class StudentMessageManage extends JFrame {
                 //正则表达式来判断输入:判断输入的学号和年龄是否正确
                 if(sno.getText().matches("^\\d{9}$")!= true && age.getText().matches("^(1\\d|[1-9])$")!= true ) {
                     AlertFrame.showMessage("输入数据有误，请重新输入", "提示", JOptionPane.INFORMATION_MESSAGE);
-                    frame.repaint();
+                    sno.setText("");
+                    age.setText("");
                 }
                 student.setSno(sno.getText());
                 student.setSname(sname.getText());
@@ -138,7 +139,6 @@ public class StudentMessageManage extends JFrame {
                 //判断对象属性中是否有空值
                 if ((student.getAge() == null || student.getAge().toString() == "")||(student.getSno()==null||student.getSno()=="")||(student.getDept()==null||student.getDept()=="")||(student.getSex()==null||student.getSex()=="")||(student.getSname()==null||student.getSname()=="")){
                     AlertFrame.showMessage("请将信息填充完整", "提示", JOptionPane.INFORMATION_MESSAGE);
-                    frame.repaint();
                 }else{
                     //添加学生
                     studentService.AddStudent(student);
