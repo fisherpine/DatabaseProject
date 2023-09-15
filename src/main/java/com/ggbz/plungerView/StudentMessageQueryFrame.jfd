@@ -87,19 +87,39 @@ new FormModel {
 					"x": 340
 					"y": 5
 				} )
-				add( new FormComponent( "javax.swing.JTextField" ) {
-					name: "textField4"
-				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-					"x": 430
-					"y": 5
-					"width": 100
-				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
 					name: "button5"
 					"text": "查询"
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-					"x": 555
+					"x": 660
 					"y": 5
+					"width": 39
+				} )
+				add( new FormComponent( "javax.swing.JComboBox" ) {
+					name: "comboBox2"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 435
+					"y": 5
+					"width": 95
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label6"
+					"text": "班级："
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 540
+					"y": 10
+				} )
+				add( new FormComponent( "javax.swing.JComboBox" ) {
+					name: "comboBox3"
+					"model": new javax.swing.DefaultComboBoxModel {
+						selectedItem: "01"
+						addElement( "01" )
+						addElement( "02" )
+					}
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 570
+					"y": 5
+					"width": 80
 				} )
 			}, new FormLayoutConstraints( class java.lang.String ) {
 				"value": "North"
@@ -315,7 +335,7 @@ new FormModel {
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 50, 10 )
-			"size": new java.awt.Dimension( 665, 405 )
+			"size": new java.awt.Dimension( 710, 405 )
 		} )
 	}
 }

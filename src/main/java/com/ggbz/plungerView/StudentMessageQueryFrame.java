@@ -6,7 +6,6 @@ package com.ggbz.plungerView;
 
 import java.awt.*;
 import javax.swing.*;
-import javax.swing.table.*;
 import javax.swing.table.DefaultTableModel;
 
 import com.jgoodies.forms.factories.*;
@@ -14,8 +13,8 @@ import com.jgoodies.forms.factories.*;
 /**
  * @author sssy
  */
-public class StudentMessageEditFrame extends JFrame {
-    public StudentMessageEditFrame() {
+public class StudentMessageQueryFrame extends JFrame {
+    public StudentMessageQueryFrame() {
         initComponents();
     }
 
@@ -31,8 +30,10 @@ public class StudentMessageEditFrame extends JFrame {
         textField2 = new JTextField();
         comboBox1 = new JComboBox<>();
         textField3 = new JTextField();
-        textField4 = new JTextField();
         button5 = new JButton();
+        comboBox2 = new JComboBox();
+        label6 = new JLabel();
+        comboBox3 = new JComboBox<>();
         panel2 = new JPanel();
         button1 = new JButton();
         button2 = new JButton();
@@ -92,13 +93,26 @@ public class StudentMessageEditFrame extends JFrame {
             comboBox1.setBounds(250, 5, 50, comboBox1.getPreferredSize().height);
             panel1.add(textField3);
             textField3.setBounds(new Rectangle(new Point(340, 5), textField3.getPreferredSize()));
-            panel1.add(textField4);
-            textField4.setBounds(430, 5, 100, textField4.getPreferredSize().height);
 
             //---- button5 ----
             button5.setText("\u67e5\u8be2");
             panel1.add(button5);
-            button5.setBounds(new Rectangle(new Point(555, 5), button5.getPreferredSize()));
+            button5.setBounds(660, 5, 39, button5.getPreferredSize().height);
+            panel1.add(comboBox2);
+            comboBox2.setBounds(435, 5, 95, comboBox2.getPreferredSize().height);
+
+            //---- label6 ----
+            label6.setText("\u73ed\u7ea7\uff1a");
+            panel1.add(label6);
+            label6.setBounds(new Rectangle(new Point(540, 10), label6.getPreferredSize()));
+
+            //---- comboBox3 ----
+            comboBox3.setModel(new DefaultComboBoxModel<>(new String[] {
+                "01",
+                "02"
+            }));
+            panel1.add(comboBox3);
+            comboBox3.setBounds(570, 5, 80, comboBox3.getPreferredSize().height);
 
             {
                 // compute preferred size
@@ -210,8 +224,10 @@ public class StudentMessageEditFrame extends JFrame {
     private JTextField textField2;
     private JComboBox<String> comboBox1;
     private JTextField textField3;
-    private JTextField textField4;
     private JButton button5;
+    private JComboBox comboBox2;
+    private JLabel label6;
+    private JComboBox<String> comboBox3;
     private JPanel panel2;
     private JButton button1;
     private JButton button2;
