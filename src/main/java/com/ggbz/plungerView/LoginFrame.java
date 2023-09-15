@@ -26,6 +26,7 @@ public class LoginFrame extends JFrame {
         label2 = new JLabel();
         label3 = new JLabel();
         button3 = new JButton();
+        comboBox1 = new JComboBox<>();
 
         //======== this ========
         Container contentPane = getContentPane();
@@ -38,7 +39,7 @@ public class LoginFrame extends JFrame {
             //---- button2 ----
             button2.setText("\u767b\u5f55");
             panel1.add(button2);
-            button2.setBounds(125, 175, 80, 30);
+            button2.setBounds(110, 195, 80, 30);
             panel1.add(textField1);
             textField1.setBounds(120, 80, 180, textField1.getPreferredSize().height);
             panel1.add(passwordField1);
@@ -65,7 +66,15 @@ public class LoginFrame extends JFrame {
             //---- button3 ----
             button3.setText("\u6ce8\u518c");
             panel1.add(button3);
-            button3.setBounds(215, 175, 80, 30);
+            button3.setBounds(200, 195, 80, 30);
+
+            //---- comboBox1 ----
+            comboBox1.setModel(new DefaultComboBoxModel<>(new String[] {
+                "\u5b66\u751f",
+                "\u8001\u5e08"
+            }));
+            panel1.add(comboBox1);
+            comboBox1.setBounds(new Rectangle(new Point(160, 160), comboBox1.getPreferredSize()));
 
             {
                 // compute preferred size
@@ -85,7 +94,6 @@ public class LoginFrame extends JFrame {
         contentPane.add(panel1);
         pack();
         setLocationRelativeTo(getOwner());
-        contentPane.setVisible(true);
         // JFormDesigner - End of component initialization  //GEN-END:initComponents  @formatter:on
     }
 
@@ -98,5 +106,6 @@ public class LoginFrame extends JFrame {
     private JLabel label2;
     private JLabel label3;
     private JButton button3;
+    private JComboBox<String> comboBox1;
     // JFormDesigner - End of variables declaration  //GEN-END:variables  @formatter:on
 }
