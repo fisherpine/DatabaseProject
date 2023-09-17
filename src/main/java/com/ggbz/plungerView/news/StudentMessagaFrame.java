@@ -2,7 +2,7 @@
  * Created by JFormDesigner on Thu Sep 14 16:14:40 CST 2023
  */
 
-package com.ggbz.plungerView;
+package com.ggbz.plungerView.news;
 
 import java.awt.*;
 import javax.swing.*;
@@ -13,8 +13,8 @@ import com.jgoodies.forms.factories.*;
 /**
  * @author sssy
  */
-public class StudentMessageQueryFrame extends JFrame {
-    public StudentMessageQueryFrame() {
+public class StudentMessagaFrame extends JFrame {
+    public StudentMessagaFrame() {
         initComponents();
     }
 
@@ -38,7 +38,6 @@ public class StudentMessageQueryFrame extends JFrame {
         button1 = new JButton();
         button2 = new JButton();
         button3 = new JButton();
-        button4 = new JButton();
         scrollPane1 = new JScrollPane();
         table1 = new JTable();
 
@@ -144,17 +143,12 @@ public class StudentMessageQueryFrame extends JFrame {
             //---- button2 ----
             button2.setText("\u6dfb\u52a0");
             panel2.add(button2);
-            button2.setBounds(new Rectangle(new Point(220, 5), button2.getPreferredSize()));
+            button2.setBounds(new Rectangle(new Point(300, 5), button2.getPreferredSize()));
 
             //---- button3 ----
             button3.setText("\u5220\u9664");
             panel2.add(button3);
-            button3.setBounds(new Rectangle(new Point(340, 5), button3.getPreferredSize()));
-
-            //---- button4 ----
-            button4.setText("\u63d2\u5165");
-            panel2.add(button4);
-            button4.setBounds(new Rectangle(new Point(440, 5), button4.getPreferredSize()));
+            button3.setBounds(new Rectangle(new Point(455, 5), button3.getPreferredSize()));
 
             {
                 // compute preferred size
@@ -232,7 +226,6 @@ public class StudentMessageQueryFrame extends JFrame {
     private JButton button1;
     private JButton button2;
     private JButton button3;
-    private JButton button4;
     private JScrollPane scrollPane1;
     private JTable table1;
     // JFormDesigner - End of variables declaration  //GEN-END:variables  @formatter:on

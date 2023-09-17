@@ -138,21 +138,14 @@ new FormModel {
 					name: "button2"
 					"text": "添加"
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-					"x": 220
+					"x": 300
 					"y": 5
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
 					name: "button3"
 					"text": "删除"
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-					"x": 340
-					"y": 5
-				} )
-				add( new FormComponent( "javax.swing.JButton" ) {
-					name: "button4"
-					"text": "插入"
-				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-					"x": 440
+					"x": 455
 					"y": 5
 				} )
 			}, new FormLayoutConstraints( class java.lang.String ) {

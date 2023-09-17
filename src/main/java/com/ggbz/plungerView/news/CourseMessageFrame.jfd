@@ -5,75 +5,117 @@ new FormModel {
 	root: new FormRoot {
 		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class java.awt.BorderLayout ) ) {
 			name: "this"
+			"preferredSize": new java.awt.Dimension( 14, 40 )
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
 				name: "panel1"
-				"preferredSize": new java.awt.Dimension( 0, 35 )
+				"preferredSize": new java.awt.Dimension( 30, 35 )
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "label1"
-					"text": "学号："
+					"text": "课程号："
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-					"x": 10
+					"x": 25
 					"y": 10
 				} )
 				add( new FormComponent( "javax.swing.JTextField" ) {
 					name: "textField1"
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-					"x": 40
+					"x": 65
 					"y": 5
-					"width": 135
+					"height": 25
+					"width": 105
 				} )
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "label2"
+					"text": "课名："
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-					"x": 200
-					"y": 10
-				} )
-				add( new FormComponent( "javax.swing.JButton" ) {
-					name: "button1"
-					"text": "提交"
-				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-					"x": 190
-					"y": 5
-				} )
-				add( new FormComponent( "javax.swing.JLabel" ) {
-					name: "label3"
-					"text": "已修学分："
-				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-					"x": 290
+					"x": 180
 					"y": 10
 				} )
 				add( new FormComponent( "javax.swing.JTextField" ) {
 					name: "textField2"
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-					"x": 350
+					"x": 210
 					"y": 5
-					"height": 25
+					"width": 100
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label3"
+					"text": "学分："
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 470
+					"y": 10
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label4"
+					"text": "教师："
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 325
+					"y": 10
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "textField3"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 355
+					"y": 5
+					"width": 100
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "textField4"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 500
+					"y": 5
+					"width": 90
 				} )
 			}, new FormLayoutConstraints( class java.lang.String ) {
 				"value": "North"
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+				name: "panel2"
+				"preferredSize": new java.awt.Dimension( 0, 35 )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button2"
+					"text": "查询"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 65
+					"y": 5
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button3"
+					"text": "修改"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 195
+					"y": 5
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button4"
+					"text": "添加"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 380
+					"y": 5
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button5"
+					"text": "删除"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 530
+					"y": 5
+				} )
+			}, new FormLayoutConstraints( class java.lang.String ) {
+				"value": "South"
 			} )
 			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
 				name: "scrollPane1"
 				add( new FormComponent( "javax.swing.JTable" ) {
 					name: "table1"
-					"inheritsPopupMenu": true
 					"model": new com.jformdesigner.model.SwingTableModel( new java.util.Vector {
 						add( new java.util.Vector {
 							add( null )
 							add( null )
 							add( null )
-						} )
-						add( new java.util.Vector {
-							add( null )
-							add( null )
 							add( null )
 						} )
 						add( new java.util.Vector {
 							add( null )
-							add( null )
-							add( null )
-						} )
-						add( new java.util.Vector {
 							add( null )
 							add( null )
 							add( null )
@@ -82,23 +124,22 @@ new FormModel {
 							add( null )
 							add( null )
 							add( null )
-						} )
-						add( new java.util.Vector {
-							add( null )
-							add( null )
 							add( null )
 						} )
 						add( new java.util.Vector {
 							add( null )
 							add( null )
 							add( null )
-						} )
-						add( new java.util.Vector {
-							add( null )
-							add( null )
 							add( null )
 						} )
 						add( new java.util.Vector {
+							add( null )
+							add( null )
+							add( null )
+							add( null )
+						} )
+						add( new java.util.Vector {
+							add( null )
 							add( null )
 							add( null )
 							add( null )
@@ -107,15 +148,19 @@ new FormModel {
 						add( null )
 						add( null )
 						add( null )
-					}, new java.util.Vector {
-						add( null )
-						add( null )
 						add( null )
 					}, new java.util.Vector {
 						add( null )
 						add( null )
 						add( null )
+						add( null )
 					}, new java.util.Vector {
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+					}, new java.util.Vector {
+						add( null )
 						add( null )
 						add( null )
 						add( null )
@@ -125,8 +170,8 @@ new FormModel {
 				"value": "Center"
 			} )
 		}, new FormLayoutConstraints( null ) {
-			"location": new java.awt.Point( 190, 55 )
-			"size": new java.awt.Dimension( 435, 290 )
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 685, 325 )
 		} )
 	}
 }

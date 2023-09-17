@@ -23,6 +23,8 @@ public class ChooseCourseEdit extends JFrame {
         textField1 = new JTextField();
         label2 = new JLabel();
         button1 = new JButton();
+        label3 = new JLabel();
+        textField2 = new JTextField();
         scrollPane1 = new JScrollPane();
         table1 = new JTable();
 
@@ -48,6 +50,13 @@ public class ChooseCourseEdit extends JFrame {
             button1.setText("\u63d0\u4ea4");
             panel1.add(button1);
             button1.setBounds(new Rectangle(new Point(190, 5), button1.getPreferredSize()));
+
+            //---- label3 ----
+            label3.setText("\u5df2\u4fee\u5b66\u5206\uff1a");
+            panel1.add(label3);
+            label3.setBounds(new Rectangle(new Point(290, 10), label3.getPreferredSize()));
+            panel1.add(textField2);
+            textField2.setBounds(350, 5, textField2.getPreferredSize().width, 25);
 
             {
                 // compute preferred size
@@ -101,6 +110,8 @@ public class ChooseCourseEdit extends JFrame {
     private JTextField textField1;
     private JLabel label2;
     private JButton button1;
+    private JLabel label3;
+    private JTextField textField2;
     private JScrollPane scrollPane1;
     private JTable table1;
     // JFormDesigner - End of variables declaration  //GEN-END:variables  @formatter:on
