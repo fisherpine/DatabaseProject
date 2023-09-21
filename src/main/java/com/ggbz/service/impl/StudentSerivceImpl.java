@@ -65,4 +65,15 @@ public class StudentSerivceImpl implements StudentService {
         float LeversRate = (float) QueryAllLevelsPeopleNumber(dept, lesson, cno, grade_segment) / QueryNumberByDeptLesson(dept, lesson);
         return LeversRate;
     }
+
+    /**
+     * 条件查询学生
+     * @param student
+     * @return
+     */
+    @Override
+    public List<Student> QueryStudent(Student student) {
+        List<Student> list =  studentDAO.list(student);
+        return list;
+    }
 }

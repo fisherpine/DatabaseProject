@@ -4,7 +4,10 @@
 
 package com.ggbz.plungerView;
 
+import com.ggbz.plungerView.news.StudentMessageFrame;
+
 import java.awt.*;
+import java.awt.event.*;
 import javax.swing.*;
 
 /**
@@ -13,6 +16,12 @@ import javax.swing.*;
 public class MainFrame extends JFrame {
     public MainFrame() {
         initComponents();
+    }
+
+    private void menuItem1(ActionEvent e) {
+        // TODO 学生信息编辑
+        //进入StudentMessageFrame界面
+        new StudentMessageFrame().setVisible(true);
     }
 
     private void initComponents() {
@@ -37,6 +46,7 @@ public class MainFrame extends JFrame {
         menuItem13 = new JMenuItem();
 
         //======== this ========
+        setPreferredSize(new Dimension(544, 388));
         Container contentPane = getContentPane();
         contentPane.setLayout(new FlowLayout());
 
@@ -49,6 +59,7 @@ public class MainFrame extends JFrame {
 
                 //---- menuItem1 ----
                 menuItem1.setText("\u5b66\u751f\u4fe1\u606f\u7f16\u8f91");
+                menuItem1.addActionListener(e -> menuItem1(e));
                 menu1.add(menuItem1);
 
                 //---- menuItem2 ----

@@ -6,25 +6,29 @@ new FormModel {
 		add( new FormWindow( "javax.swing.JDialog", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
 			name: "this"
 			"title": "提示"
+			"preferredSize": new java.awt.Dimension( 418, 227 )
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "button1"
 				"text": "确定"
+				"font": new java.awt.Font( "仿宋", 0, 20 )
+				"preferredSize": new java.awt.Dimension( 100, 24 )
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button1", true ) )
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 				"x": 145
-				"y": 95
+				"y": 100
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label2"
-				"text": "text"
-				"font": new java.awt.Font( "Mongolian Baiti", 0, 22 )
+				name: "label1"
+				"text": "请检查用户名、密码以及身份"
+				"font": new java.awt.Font( "宋体", 0, 22 )
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-				"x": 80
-				"y": 50
-				"width": 220
+				"x": 60
+				"y": 35
+				"height": 40
 			} )
 		}, new FormLayoutConstraints( null ) {
-			"location": new java.awt.Point( 215, 85 )
-			"size": new java.awt.Dimension( 400, 190 )
+			"location": new java.awt.Point( 45, 120 )
+			"size": new java.awt.Dimension( 400, 185 )
 		} )
 	}
 }

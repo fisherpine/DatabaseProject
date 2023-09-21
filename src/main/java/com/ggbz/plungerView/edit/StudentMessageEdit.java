@@ -26,8 +26,8 @@ public class StudentMessageEdit extends JFrame {
         textField2 = new JTextField();
         comboBox1 = new JComboBox<>();
         textField3 = new JTextField();
-        comboBox2 = new JComboBox();
         button1 = new JButton();
+        textField4 = new JTextField();
 
         //======== this ========
         Container contentPane = getContentPane();
@@ -76,13 +76,13 @@ public class StudentMessageEdit extends JFrame {
         comboBox1.setBounds(95, 110, 110, comboBox1.getPreferredSize().height);
         contentPane.add(textField3);
         textField3.setBounds(95, 140, 110, textField3.getPreferredSize().height);
-        contentPane.add(comboBox2);
-        comboBox2.setBounds(95, 170, 110, comboBox2.getPreferredSize().height);
 
         //---- button1 ----
         button1.setText("\u63d0\u4ea4");
         contentPane.add(button1);
         button1.setBounds(new Rectangle(new Point(100, 215), button1.getPreferredSize()));
+        contentPane.add(textField4);
+        textField4.setBounds(95, 170, 110, textField4.getPreferredSize().height);
 
         {
             // compute preferred size
@@ -113,7 +113,7 @@ public class StudentMessageEdit extends JFrame {
     private JTextField textField2;
     private JComboBox<String> comboBox1;
     private JTextField textField3;
-    private JComboBox comboBox2;
     private JButton button1;
+    private JTextField textField4;
     // JFormDesigner - End of variables declaration  //GEN-END:variables  @formatter:on
 }

@@ -34,4 +34,11 @@ public interface StudentDAO {
     int QueryNumberByDeptLesson(@Param("dept")String dept, @Param("lesson")String lesson);
 
     int QueryAllLevelsPeopleNumber(@Param("dept")String dept, @Param("lesson")String lesson, @Param("cno") String cno,@Param("grade_segment")String grade_segment);
+
+    /**
+     * 条件查询学生
+     * @param student
+     * @return
+     */
+    List<Student> list(Student student);
 }

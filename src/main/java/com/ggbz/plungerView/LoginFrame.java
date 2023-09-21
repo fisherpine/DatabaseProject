@@ -4,31 +4,80 @@
 
 package com.ggbz.plungerView;
 
+import com.ggbz.plungerView.common.LoginAlertFrame;
+import com.ggbz.pojo.User;
+import com.ggbz.service.UserSerivce;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import java.awt.*;
+import java.awt.event.*;
 import javax.swing.*;
 
 /**
  * @author sssy
  */
 public class LoginFrame extends JFrame {
+    @Autowired
+    private UserSerivce userSerivce;
     public LoginFrame() {
         //构造方法
         initComponents();
     }
 
+    private void Login(ActionEvent e) {
+        //得到界面中的数据
+        String hm = textField1.getText();
+        String password = passwordField1.getText();
+        String role = (String)comboBox1.getSelectedItem();
+        int i = 0;
+        if(role.equals("学生")){
+            i = 0;
+        }else{
+            i = 1;
+        }
+        //登录操作
+        User user = new User();
+        user.setHm(hm);
+        user.setPwd(password);
+        user.setRole(i);
+        //登录需要验证账号密码身份
+        Boolean login = userSerivce.login(user);
+        if (login == true){
+            if(i==1){
+                //进入管理员界面
+                new MainFrame().setVisible(true);
+            }else {
+                //TODO 进入学生界面
+            }
+        }else{
+            LoginAlertFrame alertFrame = new LoginAlertFrame(this);
+            alertFrame.setVisible(true);
+        }
+    }
+
+    private void button2(ActionEvent e) {
+    }
+
+    private void button3(ActionEvent e) {
+    }
+
+
+
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents  @formatter:off
         panel1 = new JPanel();
-        button2 = new JButton();
+        LoginButton = new JButton();
         textField1 = new JTextField();
         passwordField1 = new JPasswordField();
         label1 = new JLabel();
         label2 = new JLabel();
         label3 = new JLabel();
-        button3 = new JButton();
+        RegisterBotton = new JButton();
         comboBox1 = new JComboBox<>();
 
         //======== this ========
+        setPreferredSize(new Dimension(414, 313));
+        setVisible(true);
         Container contentPane = getContentPane();
         contentPane.setLayout(new BoxLayout(contentPane, BoxLayout.X_AXIS));
 
@@ -36,10 +85,14 @@ public class LoginFrame extends JFrame {
         {
             panel1.setLayout(null);
 
-            //---- button2 ----
-            button2.setText("\u767b\u5f55");
-            panel1.add(button2);
-            button2.setBounds(110, 195, 80, 30);
+            //---- LoginButton ----
+            LoginButton.setText("\u767b\u5f55");
+            LoginButton.addActionListener(e -> {
+			button2(e);
+			Login(e);
+		});
+            panel1.add(LoginButton);
+            LoginButton.setBounds(110, 195, 80, 30);
             panel1.add(textField1);
             textField1.setBounds(120, 80, 180, textField1.getPreferredSize().height);
             panel1.add(passwordField1);
@@ -63,10 +116,14 @@ public class LoginFrame extends JFrame {
             panel1.add(label3);
             label3.setBounds(new Rectangle(new Point(100, 25), label3.getPreferredSize()));
 
-            //---- button3 ----
-            button3.setText("\u6ce8\u518c");
-            panel1.add(button3);
-            button3.setBounds(200, 195, 80, 30);
+            //---- RegisterBotton ----
+            RegisterBotton.setText("\u6ce8\u518c");
+            RegisterBotton.addActionListener(e -> {
+			button3(e);
+			button3(e);
+		});
+            panel1.add(RegisterBotton);
+            RegisterBotton.setBounds(200, 195, 80, 30);
 
             //---- comboBox1 ----
             comboBox1.setModel(new DefaultComboBoxModel<>(new String[] {
@@ -99,13 +156,13 @@ public class LoginFrame extends JFrame {
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables  @formatter:off
     private JPanel panel1;
-    private JButton button2;
+    private JButton LoginButton;
     private JTextField textField1;
     private JPasswordField passwordField1;
     private JLabel label1;
     private JLabel label2;
     private JLabel label3;
-    private JButton button3;
+    private JButton RegisterBotton;
     private JComboBox<String> comboBox1;
     // JFormDesigner - End of variables declaration  //GEN-END:variables  @formatter:on
 }

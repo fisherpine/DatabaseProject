@@ -1,7 +1,6 @@
 package com.ggbz.service;
 
 import com.ggbz.pojo.Student;
-import com.sun.org.apache.xpath.internal.operations.Bool;
 
 import java.util.List;
 
@@ -31,4 +30,12 @@ public interface StudentService {
 
     //各分段比例
     public float QueryAllLevelsRate(String dept,String lesson,String cno,String grade_segment);
+
+
+    /**
+     * 条件查询学生
+     * @param student
+     * @return
+     */
+    List<Student> QueryStudent(Student student);
 }

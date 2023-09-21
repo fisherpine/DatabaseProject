@@ -54,5 +54,22 @@
                                           on a.sno = b.sno) message
              GROUP BY grade_segment) numbertable where grade_segment = #{grade_segment};
     </select>
+    <select id="list" resultType="com.ggbz.pojo.Student">
+        select * from s
+        <where>
+            <if test="sno != null and sno !=''">
+                and sno = #{sno}
+            </if>
+            <if test="sname != null and sname !=''">
+                and sname like concat('%',#{sname},'%')
+            </if>
+            <if test="sex != null and sex != ''">
+                and sex = #{sex}
+            </if>
+            <if test="dept != null and dept !=''">
+                dept like concat('%',#{dept},'%')
+            </if>
+        </where>
+    </select>
 
 </mapper>

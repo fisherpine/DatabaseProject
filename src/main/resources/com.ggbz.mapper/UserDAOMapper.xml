@@ -5,4 +5,9 @@
     <insert id="save" parameterType="com.ggbz.pojo.User">
         insert into user(hm,pwd,role) value(#{hm},#{pwd},#{role})
     </insert>
+    <select id="QueryUser" resultType="com.ggbz.pojo.User">
+        select * from user where hm = #{hm}
+                             and pwd = #{pwd}
+                             and role = #{role}
+    </select>
 </mapper>

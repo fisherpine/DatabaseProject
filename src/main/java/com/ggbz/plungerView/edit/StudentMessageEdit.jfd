@@ -88,19 +88,19 @@ new FormModel {
 				"y": 140
 				"width": 110
 			} )
-			add( new FormComponent( "javax.swing.JComboBox" ) {
-				name: "comboBox2"
-			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-				"x": 95
-				"y": 170
-				"width": 110
-			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "button1"
 				"text": "提交"
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 				"x": 100
 				"y": 215
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField4"
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 95
+				"y": 170
+				"width": 110
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 290, 50 )

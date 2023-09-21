@@ -39,9 +39,8 @@
     <bean id="scService" class="com.ggbz.service.impl.SCServiceImpl"/>
 
     <!--View-->
-    <bean id="studentMessageManage" class="com.ggbz.view.StudentMessageManage">
-    </bean>
-
+    <bean id="loginFrame" class="com.ggbz.plungerView.LoginFrame"></bean>
+    <bean id="studentMessageFrame" class="com.ggbz.plungerView.news.StudentMessageFrame"></bean>
 
 
 </beans>
