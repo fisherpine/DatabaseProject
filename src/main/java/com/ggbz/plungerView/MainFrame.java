@@ -19,9 +19,9 @@ public class MainFrame extends JFrame {
     }
 
     private void menuItem1(ActionEvent e) {
-        // TODO 学生信息编辑
         //进入StudentMessageFrame界面
         new StudentMessageFrame().setVisible(true);
+
     }
 
     private void initComponents() {
