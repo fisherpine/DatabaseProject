@@ -5,6 +5,7 @@
 package com.ggbz.plungerView;
 
 import com.ggbz.plungerView.news.StudentMessageFrame;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -14,13 +15,15 @@ import javax.swing.*;
  * @author sssy
  */
 public class MainFrame extends JFrame {
+    @Autowired
+    private StudentMessageFrame studentMessageFrame;
     public MainFrame() {
         initComponents();
     }
 
     private void menuItem1(ActionEvent e) {
         //进入StudentMessageFrame界面
-        new StudentMessageFrame().setVisible(true);
+        studentMessageFrame.setVisible(true);
 
     }
 

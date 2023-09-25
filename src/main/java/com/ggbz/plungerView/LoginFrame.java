@@ -4,7 +4,6 @@
 
 package com.ggbz.plungerView;
 
-import com.ggbz.plungerView.common.LoginAlertFrame;
 import com.ggbz.pojo.User;
 import com.ggbz.service.UserSerivce;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +18,9 @@ import javax.swing.*;
 public class LoginFrame extends JFrame {
     @Autowired
     private UserSerivce userSerivce;
+
+    @Autowired
+    private MainFrame mainFrame;
     public LoginFrame() {
         //构造方法
         initComponents();
@@ -45,13 +47,12 @@ public class LoginFrame extends JFrame {
         if (login == true){
             if(i==1){
                 //进入管理员界面
-                new MainFrame().setVisible(true);
+                mainFrame.setVisible(true);
             }else {
                 //TODO 进入学生界面
             }
         }else{
-            LoginAlertFrame alertFrame = new LoginAlertFrame(this);
-            alertFrame.setVisible(true);
+            JOptionPane.showMessageDialog(null, "检查账号密码以及身份", "提示信息", JOptionPane.PLAIN_MESSAGE);
         }
     }
 

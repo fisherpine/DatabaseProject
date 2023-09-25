@@ -26,7 +26,6 @@ public class StudentMessageFrame extends JFrame {
     }
 
     private void button4(ActionEvent e) {
-        // TODO 查询学生
         //得到输入栏中的信息
         String StudentId = textField1.getText();
         String name = textField2.getText();
@@ -57,7 +56,6 @@ public class StudentMessageFrame extends JFrame {
 
     private void button1(ActionEvent e) {
         // 修改所选行
-        //TODO 修改学生数据
         int selectedRow = table1.getSelectedRow();
         if(selectedRow != -1){//检查是否有行选中
             String sno  = (String) table1.getValueAt(selectedRow, 0);
@@ -152,23 +150,6 @@ public class StudentMessageFrame extends JFrame {
 
             //---- table1 ----
             table1.setAutoCreateRowSorter(true);
-            table1.setModel(new DefaultTableModel(
-                new Object[][] {
-                    {null, null, null, null, null},
-                    {null, null, null, null, null},
-                    {null, null, null, null, null},
-                    {null, null, null, null, null},
-                    {null, null, null, null, null},
-                    {null, null, null, null, null},
-                    {null, null, null, null, null},
-                    {null, null, null, null, null},
-                    {null, null, null, null, null},
-                    {null, null, null, null, null},
-                },
-                new String[] {
-                    null, null, null, null, null
-                }
-            ));
             table1.setRowHeight(30);
             table1.setRowMargin(5);
             scrollPane1.setViewportView(table1);
