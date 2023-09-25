@@ -6,6 +6,11 @@
          insert into s(sno,sname,sex,age,dept) value(#{sno},#{sname},#{sex},#{age},#{dept});
     </insert>
 
+    <update id="update" parameterType="com.ggbz.pojo.Student">
+        update s set sname=#{sname},sex=#{sex},age=#{age},dept=#{dept}
+        where sno=#{sno}
+    </update>
+
 
     <delete id="DeleteStudentBySno" parameterType="String">
          delete from s where sno = #{sno};

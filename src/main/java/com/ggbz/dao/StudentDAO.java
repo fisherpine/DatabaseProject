@@ -41,4 +41,9 @@ public interface StudentDAO {
      * @return
      */
     List<Student> list(Student student);
+
+    /**
+     * 修改学生信息
+     */
+    void update(Student student);
 }

@@ -76,4 +76,13 @@ public class StudentSerivceImpl implements StudentService {
         List<Student> list =  studentDAO.list(student);
         return list;
     }
+
+    /**
+     * 修改学生信息
+     * @param student
+     */
+    @Override
+    public void update(Student student) {
+        studentDAO.update(student);
+    }
 }

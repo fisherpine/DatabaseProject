@@ -38,4 +38,9 @@ public interface StudentService {
      * @return
      */
     List<Student> QueryStudent(Student student);
+
+    /**
+     * 修改当个学生信息
+     */
+    void update(Student student);
 }
