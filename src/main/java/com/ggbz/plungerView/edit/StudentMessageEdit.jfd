@@ -5,54 +5,55 @@ new FormModel {
 	root: new FormRoot {
 		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
 			name: "this"
+			"preferredSize": new java.awt.Dimension( 286, 346 )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label1"
 				"text": "学号："
-				"font": &Font0 new java.awt.Font( "华文宋体", 0, 14 )
+				"font": new java.awt.Font( "华文宋体", 0, 16 )
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-				"x": 50
+				"x": 45
 				"y": 40
-				"width": 45
+				"width": 50
 				"height": 30
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label2"
 				"text": "姓名："
-				"font": #Font0
+				"font": new java.awt.Font( "华文宋体", 0, 16 )
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-				"width": 45
+				"width": 50
 				"height": 30
-				"x": 50
+				"x": 45
 				"y": 75
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label3"
 				"text": "性别："
-				"font": #Font0
+				"font": new java.awt.Font( "华文宋体", 0, 16 )
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-				"width": 45
+				"width": 50
 				"height": 30
-				"x": 50
+				"x": 45
 				"y": 105
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label4"
 				"text": "年龄："
-				"font": #Font0
+				"font": new java.awt.Font( "华文宋体", 0, 16 )
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-				"width": 45
+				"width": 50
 				"height": 30
-				"x": 50
+				"x": 45
 				"y": 135
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label5"
 				"text": "专业："
-				"font": #Font0
+				"font": new java.awt.Font( "华文宋体", 0, 16 )
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-				"width": 45
+				"width": 50
 				"height": 30
-				"x": 50
+				"x": 45
 				"y": 165
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
@@ -60,14 +61,14 @@ new FormModel {
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 				"x": 95
 				"y": 45
-				"width": 110
+				"width": 120
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
 				name: "textField2"
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 				"x": 95
 				"y": 80
-				"width": 110
+				"width": 120
 			} )
 			add( new FormComponent( "javax.swing.JComboBox" ) {
 				name: "comboBox1"
@@ -79,28 +80,31 @@ new FormModel {
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 				"x": 95
 				"y": 110
-				"width": 110
+				"width": 120
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
 				name: "textField3"
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 				"x": 95
 				"y": 140
-				"width": 110
+				"width": 120
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "button1"
 				"text": "提交"
+				"preferredSize": new java.awt.Dimension( 278, 342 )
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-				"x": 100
+				"x": 95
 				"y": 215
+				"width": 85
+				"height": 30
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
 				name: "textField4"
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 				"x": 95
 				"y": 170
-				"width": 110
+				"width": 120
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 290, 50 )

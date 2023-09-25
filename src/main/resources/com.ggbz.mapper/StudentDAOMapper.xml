@@ -6,9 +6,6 @@
          insert into s(sno,sname,sex,age,dept) value(#{sno},#{sname},#{sex},#{age},#{dept});
     </insert>
 
-    <update id="UpdateStudentBySno" parameterType="com.ggbz.pojo.Student">
-         update s set sname=#{sname},sex=#{sex},age=#{age},dept=#{dept},lesson=#{lesson} where sno=#{sno};
-    </update>
 
     <delete id="DeleteStudentBySno" parameterType="String">
          delete from s where sno = #{sno};
@@ -22,38 +19,10 @@
         select * from s;
     </select>
 
-    <select id="QueryStudentsByDeptAndLesson"  resultType="com.ggbz.pojo.Student">
-        select * from s where dept = #{dept} and lesson = #{lesson};
-    </select>
 
 
-    <select id="QueryFlunkByCno" parameterType="String" resultType="com.ggbz.pojo.Student">
-        select b.sno,b.sname,b.sex,b.age,b.dept,b.leeson from sc a,s b where a.sno = b.sno and a.cno=#{cno} and a.grade &lt; 60;
-    </select>
 
-    <select id="QueryFlunkNumberByDeptLessonCno" resultType="java.lang.Integer">
-        select count(*) from s a inner join sc b on a.sno = b.sno where a.dept=#{dept} and a.lesson=#{lesson} and b.cno=#{cno} and grade &lt; 60;
-    </select>
-    <select id="QueryNumberByDeptLesson" resultType="java.lang.Integer">
-        select count(*) from s where dept=#{dept} and lesson=#{lesson};
-    </select>
-    <select id="QueryAllLevelsPeopleNumber" resultType="java.lang.Integer">
-        select number from
-            (select
-                 CASE
-                     WHEN grade >= 90 THEN 'A'
-                     WHEN grade >= 80 THEN 'B'
-                     WHEN grade >= 70 THEN 'C'
-                     WHEN grade >= 60 THEN 'D'
-                     ELSE 'F'
-                     END AS grade_segment,count(*) number
-             FROM (
-                      select b.grade
-                      from (select * from s where dept=#{dept} and lesson=#{lesson}) a
-                               inner join (select * from sc where cno=#{cno}) b
-                                          on a.sno = b.sno) message
-             GROUP BY grade_segment) numbertable where grade_segment = #{grade_segment};
-    </select>
+
     <select id="list" resultType="com.ggbz.pojo.Student">
         select * from s
         <where>
@@ -63,11 +32,11 @@
             <if test="sname != null and sname !=''">
                 and sname like concat('%',#{sname},'%')
             </if>
-            <if test="sex != null and sex != ''">
+            <if test="sex != null and sex !=''">
                 and sex = #{sex}
             </if>
             <if test="dept != null and dept !=''">
-                dept like concat('%',#{dept},'%')
+                and dept like concat('%',#{dept},'%')
             </if>
         </where>
     </select>

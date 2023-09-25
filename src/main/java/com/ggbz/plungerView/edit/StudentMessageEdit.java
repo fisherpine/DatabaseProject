@@ -4,6 +4,8 @@
 
 package com.ggbz.plungerView.edit;
 
+import com.ggbz.pojo.Student;
+
 import java.awt.*;
 import javax.swing.*;
 
@@ -14,6 +16,7 @@ public class StudentMessageEdit extends JFrame {
     public StudentMessageEdit() {
         initComponents();
     }
+
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents  @formatter:off
@@ -30,42 +33,43 @@ public class StudentMessageEdit extends JFrame {
         textField4 = new JTextField();
 
         //======== this ========
+        setPreferredSize(new Dimension(286, 346));
         Container contentPane = getContentPane();
         contentPane.setLayout(null);
 
         //---- label1 ----
         label1.setText("\u5b66\u53f7\uff1a");
-        label1.setFont(new Font("\u534e\u6587\u5b8b\u4f53", Font.PLAIN, 14));
+        label1.setFont(new Font("\u534e\u6587\u5b8b\u4f53", Font.PLAIN, 16));
         contentPane.add(label1);
-        label1.setBounds(50, 40, 45, 30);
+        label1.setBounds(45, 40, 50, 30);
 
         //---- label2 ----
         label2.setText("\u59d3\u540d\uff1a");
-        label2.setFont(new Font("\u534e\u6587\u5b8b\u4f53", Font.PLAIN, 14));
+        label2.setFont(new Font("\u534e\u6587\u5b8b\u4f53", Font.PLAIN, 16));
         contentPane.add(label2);
-        label2.setBounds(50, 75, 45, 30);
+        label2.setBounds(45, 75, 50, 30);
 
         //---- label3 ----
         label3.setText("\u6027\u522b\uff1a");
-        label3.setFont(new Font("\u534e\u6587\u5b8b\u4f53", Font.PLAIN, 14));
+        label3.setFont(new Font("\u534e\u6587\u5b8b\u4f53", Font.PLAIN, 16));
         contentPane.add(label3);
-        label3.setBounds(50, 105, 45, 30);
+        label3.setBounds(45, 105, 50, 30);
 
         //---- label4 ----
         label4.setText("\u5e74\u9f84\uff1a");
-        label4.setFont(new Font("\u534e\u6587\u5b8b\u4f53", Font.PLAIN, 14));
+        label4.setFont(new Font("\u534e\u6587\u5b8b\u4f53", Font.PLAIN, 16));
         contentPane.add(label4);
-        label4.setBounds(50, 135, 45, 30);
+        label4.setBounds(45, 135, 50, 30);
 
         //---- label5 ----
         label5.setText("\u4e13\u4e1a\uff1a");
-        label5.setFont(new Font("\u534e\u6587\u5b8b\u4f53", Font.PLAIN, 14));
+        label5.setFont(new Font("\u534e\u6587\u5b8b\u4f53", Font.PLAIN, 16));
         contentPane.add(label5);
-        label5.setBounds(50, 165, 45, 30);
+        label5.setBounds(45, 165, 50, 30);
         contentPane.add(textField1);
-        textField1.setBounds(95, 45, 110, textField1.getPreferredSize().height);
+        textField1.setBounds(95, 45, 120, textField1.getPreferredSize().height);
         contentPane.add(textField2);
-        textField2.setBounds(95, 80, 110, textField2.getPreferredSize().height);
+        textField2.setBounds(95, 80, 120, textField2.getPreferredSize().height);
 
         //---- comboBox1 ----
         comboBox1.setModel(new DefaultComboBoxModel<>(new String[] {
@@ -73,16 +77,17 @@ public class StudentMessageEdit extends JFrame {
             "\u5973"
         }));
         contentPane.add(comboBox1);
-        comboBox1.setBounds(95, 110, 110, comboBox1.getPreferredSize().height);
+        comboBox1.setBounds(95, 110, 120, comboBox1.getPreferredSize().height);
         contentPane.add(textField3);
-        textField3.setBounds(95, 140, 110, textField3.getPreferredSize().height);
+        textField3.setBounds(95, 140, 120, textField3.getPreferredSize().height);
 
         //---- button1 ----
         button1.setText("\u63d0\u4ea4");
+        button1.setPreferredSize(new Dimension(278, 342));
         contentPane.add(button1);
-        button1.setBounds(new Rectangle(new Point(100, 215), button1.getPreferredSize()));
+        button1.setBounds(95, 215, 85, 30);
         contentPane.add(textField4);
-        textField4.setBounds(95, 170, 110, textField4.getPreferredSize().height);
+        textField4.setBounds(95, 170, 120, textField4.getPreferredSize().height);
 
         {
             // compute preferred size
@@ -116,4 +121,25 @@ public class StudentMessageEdit extends JFrame {
     private JButton button1;
     private JTextField textField4;
     // JFormDesigner - End of variables declaration  //GEN-END:variables  @formatter:on
+
+
+    public JTextField getTextField1() {
+        return textField1;
+    }
+
+    public JTextField getTextField2() {
+        return textField2;
+    }
+
+    public JComboBox<String> getComboBox1() {
+        return comboBox1;
+    }
+
+    public JTextField getTextField3() {
+        return textField3;
+    }
+
+    public JTextField getTextField4() {
+        return textField4;
+    }
 }

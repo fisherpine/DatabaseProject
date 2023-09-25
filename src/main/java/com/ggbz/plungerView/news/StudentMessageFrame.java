@@ -10,6 +10,7 @@ import java.util.List;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
+import com.ggbz.plungerView.edit.StudentMessageEdit;
 import com.ggbz.pojo.Student;
 import com.ggbz.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -62,10 +63,21 @@ public class StudentMessageFrame extends JFrame {
             String sno  = (String) table1.getValueAt(selectedRow, 0);
             String sname  = (String) table1.getValueAt(selectedRow, 1);
             String sex  = (String) table1.getValueAt(selectedRow, 2);
-            String age  = (String) table1.getValueAt(selectedRow, 3);
+            String age  =  table1.getValueAt(selectedRow, 3).toString();
             String dept  = (String) table1.getValueAt(selectedRow, 4);
-            Student student = new Student(sno,sname,sex,Integer.valueOf(age),dept);
-
+            StudentMessageEdit studentMessageEdit = new StudentMessageEdit();
+            studentMessageEdit.getTextField1().setText(sno);
+            studentMessageEdit.getTextField2().setText(sname);
+            if (sex.equals("男")){
+                studentMessageEdit.getComboBox1().setSelectedIndex(0);
+            }else{
+                studentMessageEdit.getComboBox1().setSelectedIndex(1);
+            }
+            studentMessageEdit.getTextField3().setText(age);
+            studentMessageEdit.getTextField4().setText(dept);
+            studentMessageEdit.setVisible(true);
+        }else{
+            JOptionPane.showMessageDialog(null, "您没有选中数据", "提示信息", JOptionPane.PLAIN_MESSAGE);
         }
     }
 
@@ -265,7 +277,4 @@ public class StudentMessageFrame extends JFrame {
     private JTextField textField4;
     // JFormDesigner - End of variables declaration  //GEN-END:variables  @formatter:on
 
-    public static void main(String[] args) {
-        new StudentMessageFrame();
-    }
 }
